@@ -23,27 +23,26 @@ export const translations = {
       source: "Google 评论",
     },
     about: {
-      title: "公园概览：从机场到城市绿肺的华丽蜕变",
-      p1: "1. 从跑道到公园的奇迹转变\n百年纪念公园（Parque Bicentenario）坐落在基多旧苏克雷元帅国际机场（Aeropuerto Internacional Mariscal Sucre）的原址上。2013年机场迁至塔巴菲拉（Tababela）后，基多市政府启动了这项宏大的城市改造计划，将曾经的跑道和航站楼区域改造成了一座占地超过100公顷的城市生态公园。这不仅是基多城市历史上的重要里程碑，也是全球范围内将废弃机场成功转型为公共休闲空间的典范案例。",
-      p2: "2. 生态与休闲的完美融合\n公园的设计充分考虑了基多的高原气候和地理环境。园区内保留了部分原有的机场基础设施（如旧航站楼结构），同时融入了大量的绿色空间、湿地保护区、自行车道和步行道。这里不仅是市民休闲娱乐的好去处，也是观鸟爱好者和自然摄影师的天堂。公园内还有专门的宠物活动区和儿童游乐设施，是全家出游的理想选择。",
+      title: "公园概览：从惊险机场到城市绿肺的传奇蜕变",
+      p1: "📖 传奇历史：飞向自由的跑道\n\n名字的由来：为何叫百年纪念？\n“百年纪念”旨在致敬1822年皮钦查战役，纪念厄瓜多尔独立200周年。这片土地见证了国家的腾飞，如今则守护着市民的宁静。\n\n一场拒绝商业化的城市奇迹\n想象一下，几十年前，巨大的波音客机就在你头顶几十米处呼啸而过，穿梭在安第斯山脉和密集的都市高楼之间。由于基多城市的高速扩张，旧机场最终被完全包围。曾经，大型客机在降落时必须惊险地贴着市区的屋顶和山脉穿梭，这里也被认为是世界上最具挑战性的机场之一。\n\n随着2013年2月19日最后一架航班起飞，这座处于高海拔且惊险万分的旧机场完成了它的历史使命。基多市政府面临着一个巨大的诱惑：这块位于市中心的125公顷黄金地段如果卖给房地产商将价值连城。但基多做出了一个造福子孙的决定——将其完全保留并打造成免费的公共生态公园。仅仅两个月后的2013年4月27日，这里奇迹般地化身为生态公园。开园首日，市长带领上万名市民涌入这里，象征性地“收复”了这片土地，这是一次全球城市规划史上堪称典范的“空间回收（Upcycling）”奇迹。",
+      p2: "🗺️ 探索公园：您不容错过的必打卡亮点\n\n🚲 在3公里长的飞机跑道上骑行\n保留下来的长达3000多米、宽46米的原始沥青主跑道，如今变成了世界上最宽阔的自行车和溜冰道。\n\n✈️ 厄瓜多尔空军航空航天博物馆\n公园内保留了部分航空元素，游客可以在这里看到退役的战斗机和航空历史展览。\n\n🏛️ 基多大都会会议中心（CCMQ）\n建在旧航站楼遗址区域，如今是基多举办大型国际展览和文化活动的核心地标。\n\n🌿 黄树林（Bosque Amarillo）与湿地\n公园不仅保留了工业遗迹，还种植了数以千计的安第斯高原特有植物，形成了观鸟绝佳的微型生态系统。",
       highlights: {
         title: "景点速览 (Quick Facts)",
         items: [
           "地理位置：厄瓜多尔，基多，Antigua terminal aerea, Av. Río Amazonas",
-          "面积：约 100 公顷",
-          "前身：旧苏克雷元帅国际机场（1930-2013）",
-          "主要功能：城市生态公园、湿地保护区、休闲娱乐",
-          "开放时间：每日 06:00 – 18:00",
+          "面积：125 公顷（基多最大城市公园）",
+          "前身：旧苏克雷元帅国际机场（1930s-2013）",
+          "核心亮点：3公里旧跑道骑行、航空航天博物馆、安第斯湿地观鸟",
+          "开放时间：每日 06:00 – 18:00（全年无休，免费开放）",
         ],
       },
       timeline: {
         title: "历史时间轴",
         events: [
-          { period: "1930年", description: "苏克雷元帅国际机场在现址正式落成并投入使用" },
-          { period: "2013年", description: "机场正式关闭，所有航班转至新建的塔巴菲拉机场" },
-          { period: "2014-2015年", description: "基多市政府启动公园改造计划，开始拆除和改建工作" },
-          { period: "2016年", description: "百年纪念公园第一期正式对公众开放" },
-          { period: "2018年至今", description: "公园持续扩建和完善，成为基多最重要的城市公园之一" }
+          { period: "1930年代", description: "苏克雷元帅国际机场在现址正式落成并投入使用" },
+          { period: "2013年2月19日", description: "最后一架航班起飞，旧机场正式关闭，结束了其历史使命" },
+          { period: "2013年4月27日", description: "百年纪念公园奇迹般地正式对公众开放，上万名市民涌入“收复”这片土地" },
+          { period: "至今", description: "公园持续扩建和完善，增设大都会会议中心和生态湿地，成为基多最大的城市绿肺" }
         ]
       },
       management: {
@@ -165,7 +164,7 @@ export const translations = {
       items: [
         {
           question: "百年纪念公园的前身是什么？",
-          answer: "百年纪念公园的前身是苏克雷元帅国际机场（Aeropuerto Internacional Mariscal Sucre），该机场于2013年正式关闭。随后，基多市政府将原机场旧址改造为城市生态公园，于2016年正式对外开放。"
+          answer: "百年纪念公园的前身是苏克雷元帅国际机场（Aeropuerto Internacional Mariscal Sucre），该机场于2013年2月19日正式关闭。仅仅两个月后的2013年4月27日，这里奇迹般地化身为城市生态公园并对外开放。"
         },
         {
           question: "公园是否免费开放？",
@@ -193,7 +192,7 @@ export const translations = {
         },
         {
           question: "附近还有哪些值得一游的景点？",
-          answer: "从百年纪念公园出发，您可以顺路参观基多大都会教堂（La Carolina Park）、基多老城（Centro Histórico，联合国教科文组织世界遗产）或乘坐基多地铁体验这座城市的现代化交通系统。如果时间充裕，还可以前往赤道纪念碑（Mitad del Mundo）感受独特的赤道文化。"
+          answer: "从百年纪念公园出发，您可以顺路参观拉卡罗利纳公园（La Carolina Park）、基多大都会教堂（Catedral Metropolitana de Quito）、基多老城（Centro Histórico，联合国教科文组织世界遗产）或乘坐基多地铁体验这座城市的现代化交通系统。如果时间充裕，还可以前往赤道纪念碑（Mitad del Mundo）感受独特的赤道文化。"
         }
       ],
     },
@@ -243,27 +242,26 @@ export const translations = {
       source: "Google Reviews",
     },
     about: {
-      title: "Overview: From Airport Runway to Urban Green Lung",
-      p1: "1. The Miraculous Transformation from Runway to Park\nParque Bicentenario (Bicentennial Park) is located on the former site of the old Mariscal Sucre International Airport (Aeropuerto Internacional Mariscal Sucre) in Quito. After the airport relocated to Tababela in 2013, the Municipality of Quito launched this ambitious urban renewal project, transforming the former runways and terminal areas into a vast urban ecological park covering over 100 hectares. This is not only a significant milestone in Quito's urban history but also a exemplary case of successfully transforming a decommissioned airport into a public recreational space worldwide.",
-      p2: "2. The Perfect Blend of Ecology and Recreation\nThe park's design fully considers Quito's highland climate and geographical environment. The park has retained some of the original airport infrastructure (such as the old terminal structure) while incorporating extensive green spaces, wetland conservation areas, cycling paths, and walking trails. It is not only a great place for citizens to relax and have fun but also a paradise for bird watchers and nature photographers. The park also has dedicated pet areas and children's play facilities, making it an ideal choice for family outings.",
+      title: "Overview: From Dangerous Airport to Urban Green Lung",
+      p1: "📖 Legendary History: The Runway to Freedom\n\nThe Origin of the Name: Why Bicentennial?\nThe name \"Parque Bicentenario\" pays tribute to the 1822 Battle of Pichincha, commemorating the 200th anniversary of Ecuador's independence. This land has witnessed the nation's rise and now guards the tranquility of its citizens.\n\nA Miracle Refusing Commercialization\nImagine decades ago, massive Boeing airliners roaring just meters above your head, navigating through the Andes mountains and dense city high-rises. With the rapid expansion of Quito, the old airport was eventually completely surrounded by the city. On February 19, 2013, the last flight took off, and this thrilling high-altitude airport completed its historical mission. The city government faced a huge temptation: this 125-hectare prime location in the city center would be worth a fortune if sold to real estate developers. But Quito made a decision for future generations—to completely preserve it and transform it into a free public ecological park. Just two months later, on April 27, 2013, it miraculously opened as an ecological park. On opening day, the mayor led tens of thousands of citizens to symbolically \"reclaim\" this land, creating an exemplary \"upcycling\" miracle in global urban planning history.",
+      p2: "🗺️ Explore the Park: Must-Visit Highlights\n\n🚲 Cycling on the 3km Runway\nThe preserved 3,000-meter-long, 46-meter-wide original asphalt main runway has now become the world's widest cycling and skating track.\n\n✈️ Ecuadorian Air Force Aeronautical and Space Museum\nThe park retains some aviation elements, and visitors can see retired fighter jets and aviation history exhibitions here.\n\n🏛️ Metropolitan Convention Center of Quito (CCMQ)\nBuilt on the site of the old terminal, it is now Quito's core landmark for hosting large international exhibitions and cultural events.\n\n🌿 Yellow Forest (Bosque Amarillo) and Wetlands\nThe park not only preserves industrial heritage but also has thousands of endemic Andean plants, creating an excellent micro-ecosystem for bird watching.",
       highlights: {
         title: "Quick Facts",
         items: [
           "Location: Antigua terminal aerea, Av. Río Amazonas, Quito, Ecuador",
-          "Area: Approximately 100 hectares",
-          "Former Use: Mariscal Sucre International Airport (1930-2013)",
-          "Main Functions: Urban ecological park, wetland conservation, recreation",
-          "Opening Hours: Daily 06:00 – 18:00",
+          "Area: 125 hectares (Quito's largest urban park)",
+          "Former Use: Old Mariscal Sucre International Airport (1930s-2013)",
+          "Highlights: 3km runway cycling, aerospace museum, Andean wetland bird watching",
+          "Opening Hours: Daily 06:00 – 18:00 (Open year-round, free admission)",
         ],
       },
       timeline: {
         title: "Historical Timeline",
         events: [
-          { period: "1930", description: "Mariscal Sucre International Airport officially opened at the current site" },
-          { period: "2013", description: "Airport officially closed, all flights transferred to the new Tababela airport" },
-          { period: "2014-2015", description: "Municipality of Quito launched the park transformation project, starting demolition and reconstruction work" },
-          { period: "2016", description: "Phase I of Parque Bicentenario officially opened to the public" },
-          { period: "2018 - Present", description: "The park continues to expand and improve, becoming one of Quito's most important urban parks" }
+          { period: "1930s", description: "Mariscal Sucre International Airport officially opened at the current site" },
+          { period: "February 19, 2013", description: "The last flight took off, and the old airport officially closed, completing its historical mission" },
+          { period: "April 27, 2013", description: "Parque Bicentenario miraculously opened to the public, with tens of thousands of citizens \"reclaiming\" the land" },
+          { period: "Present", description: "The park continues to expand, adding the Metropolitan Convention Center and ecological wetlands, becoming Quito's largest green lung" }
         ]
       },
       management: {
@@ -385,7 +383,7 @@ export const translations = {
       items: [
         {
           question: "What was the former use of Parque Bicentenario?",
-          answer: "Parque Bicentenario was formerly the Mariscal Sucre International Airport (Aeropuerto Internacional Mariscal Sucre), which officially closed in 2013. Subsequently, the Municipality of Quito transformed the former airport site into an urban ecological park, which officially opened to the public in 2016."
+          answer: "Parque Bicentenario was formerly the Mariscal Sucre International Airport, which officially closed on February 19, 2013. Just two months later, on April 27, 2013, the former airport site was miraculously transformed into an urban ecological park and opened to the public."
         },
         {
           question: "Is the park free to enter?",
@@ -413,7 +411,7 @@ export const translations = {
         },
         {
           question: "What other attractions are worth visiting nearby?",
-          answer: "Starting from Parque Bicentenario, you can visit La Carolina Park, the Quito Old Town (Centro Histórico, a UNESCO World Heritage Site), or experience the city's modern transportation system by taking the Quito Metro. If time permits, you can also go to the Mitad del Mundo (Middle of the World Monument) to experience the unique equatorial culture."
+          answer: "Starting from Parque Bicentenario, you can visit La Carolina Park, the Metropolitan Cathedral of Quito (Catedral Metropolitana de Quito), the Quito Old Town (Centro Histórico, a UNESCO World Heritage Site), or experience the city's modern transportation system by taking the Quito Metro. If time permits, you can also go to the Mitad del Mundo (Middle of the World Monument) to experience the unique equatorial culture."
         }
       ],
     },
@@ -463,27 +461,26 @@ export const translations = {
       source: "Google Reviews",
     },
     about: {
-      title: "Descripción General: De la Pista del Aeropuerto al Pulmón Verde Urbano",
-      p1: "1. La Transformación Milagrosa de la Pista al Parque\nEl Parque Bicentenario se encuentra ubicado en el antiguo sitio del Aeropuerto Internacional Mariscal Sucre en Quito. Después de que el aeropuerto se trasladara a Tababela en 2013, el Municipio de Quito lanzó este ambicioso proyecto de renovación urbana, transformando las antiguas pistas y áreas de la terminal en un vasto parque ecológico urbano que cubre más de 100 hectáreas. Esto no es solo un hito significativo en la historia urbana de Quito, sino también un caso ejemplar a nivel mundial de transformación exitosa de un aeropuerto fuera de servicio en un espacio recreativo público.",
-      p2: "2. La Fusión Perfecta de Ecología y Recreación\nEl diseño del parque considera plenamente el clima de tierras altas y el entorno geográfico de Quito. El parque ha conservado parte de la infraestructura original del aeropuerto (como la estructura de la antigua terminal) mientras incorpora amplios espacios verdes, áreas de conservación de humedales, ciclovías y senderos peatonales. No es solo un gran lugar para que los ciudadanos se relajen y diviertan, sino también un paraíso para los observadores de aves y los fotógrafos de naturaleza. El parque también cuenta con áreas dedicadas para mascotas e instalaciones de juego para niños, lo que lo convierte en una opción ideal para salidas familiares.",
+      title: "Descripción General: De Aeropuerto Peligroso a Pulmón Verde Urbano",
+      p1: "📖 Historia Legendaria: La Pista Hacia la Libertad\n\nEl Origen del Nombre: ¿Por qué Bicentenario?\nEl nombre \"Parque Bicentenario\" rinde homenaje a la Batalla de Pichincha de 1822, conmemorando el bicentenario de la independencia de Ecuador. Esta tierra ha sido testigo del ascenso de la nación y ahora guarda la tranquilidad de sus ciudadanos.\n\nUn Milagro que Rechazó la Comercialización\nImagínese hace décadas, enormes aviones de pasajeros Boeing rugiendo a pocos metros sobre su cabeza, navegando a través de las montañas de los Andes y los densos rascacielos de la ciudad. Con la rápida expansión de Quito, el antiguo aeropuerto quedó completamente rodeado. El 19 de febrero de 2013, despegó el último vuelo y este emocionante aeropuerto completó su misión histórica. El gobierno de la ciudad enfrentó una gran tentación: esta ubicación privilegiada de 125 hectáreas valdría una fortuna si se vendiera a desarrolladores inmobiliarios. Pero Quito tomó una decisión para las generaciones futuras: preservarla por completo y transformarla en un parque ecológico público gratuito. Apenas dos meses después, el 27 de abril de 2013, se abrió milagrosamente como parque ecológico. El día de la inauguración, el alcalde lideró a decenas de miles de ciudadanos para \"recuperar\" simbólicamente esta tierra, creando un milagro ejemplar de \"reciclaje urbano\" (upcycling) en la historia de la planificación urbana mundial.",
+      p2: "🗺️ Explora el Parque: Puntos Destacados\n\n🚲 Ciclismo en la Pista de 3km\nLa pista principal de asfalto original conservada de 3.000 metros de largo y 46 metros de ancho se ha convertido ahora en la pista de ciclismo y patinaje más ancha del mundo.\n\n✈️ Museo Aeronáutico y del Espacio de la FAE\nEl parque conserva algunos elementos de aviación, y los visitantes pueden ver aviones de combate retirados y exhibiciones de historia de la aviación.\n\n🏛️ Centro de Convenciones Metropolitano de Quito (CCMQ)\nConstruido en el sitio de la antigua terminal, ahora es el hito central de Quito para albergar grandes exposiciones internacionales y eventos culturales.\n\n🌿 Bosque Amarillo y Humedales\nEl parque no solo preserva el patrimonio industrial, sino que también cuenta con miles de plantas andinas endémicas, creando un excelente microecosistema para la observación de aves.",
       highlights: {
         title: "Datos Rápidos (Quick Facts)",
         items: [
           "Ubicación: Antigua terminal aerea, Av. Río Amazonas, Quito, Ecuador",
-          "Área: Aproximadamente 100 hectáreas",
-          "Uso Anterior: Aeropuerto Internacional Mariscal Sucre (1930-2013)",
-          "Funciones Principales: Parque ecológico urbano, conservación de humedales, recreación",
-          "Horario de Apertura: Diario 06:00 – 18:00",
+          "Área: 125 hectáreas (El parque urbano más grande de Quito)",
+          "Uso Anterior: Antiguo Aeropuerto Internacional Mariscal Sucre (1930s-2013)",
+          "Puntos Destacados: Pista de 3km para ciclismo, museo aeroespacial, observación de aves",
+          "Horario de Apertura: Diario 06:00 – 18:00 (Abierto todo el año, entrada gratuita)",
         ],
       },
       timeline: {
         title: "Línea de Tiempo Histórica",
         events: [
-          { period: "1930", description: "El Aeropuerto Internacional Mariscal Sucre abrió oficialmente en el sitio actual" },
-          { period: "2013", description: "El aeropuerto cerró oficialmente, todos los vuelos se trasladaron al nuevo aeropuerto de Tababela" },
-          { period: "2014-2015", description: "El Municipio de Quito lanzó el proyecto de transformación del parque, comenzando la demolición y reconstrucción" },
-          { period: "2016", description: "La Fase I del Parque Bicentenario abrió oficialmente al público" },
-          { period: "2018 - Presente", description: "El parque continúa expandiéndose y mejorando, convirtiéndose en uno de los parques urbanos más importantes de Quito" }
+          { period: "1930s", description: "El Aeropuerto Internacional Mariscal Sucre abrió oficialmente en el sitio actual" },
+          { period: "19 de febrero de 2013", description: "Despegó el último vuelo y el antiguo aeropuerto cerró oficialmente" },
+          { period: "27 de abril de 2013", description: "El Parque Bicentenario se abrió milagrosamente al público, con miles de ciudadanos \"recuperando\" la tierra" },
+          { period: "Actualidad", description: "El parque continúa expandiéndose, agregando el Centro de Convenciones Metropolitano y humedales ecológicos" }
         ]
       },
       management: {
@@ -605,7 +602,7 @@ export const translations = {
       items: [
         {
           question: "¿Cuál fue el uso anterior del Parque Bicentenario?",
-          answer: "El Parque Bicentenario fue anteriormente el Aeropuerto Internacional Mariscal Sucre (Aeropuerto Internacional Mariscal Sucre), que cerró oficialmente en 2013. Posteriormente, el Municipio de Quito transformó el antiguo sitio del aeropuerto en un parque ecológico urbano, que abrió oficialmente al público en 2016."
+          answer: "El Parque Bicentenario fue anteriormente el Aeropuerto Internacional Mariscal Sucre, que cerró oficialmente el 19 de febrero de 2013. Apenas dos meses después, el 27 de abril de 2013, el sitio del antiguo aeropuerto se transformó milagrosamente en un parque ecológico urbano y se abrió al público."
         },
         {
           question: "¿Es gratuito entrar al parque?",
@@ -633,7 +630,7 @@ export const translations = {
         },
         {
           question: "¿Qué otras atracciones vale la pena visitar cerca?",
-          answer: "Comenzando desde el Parque Bicentenario, puede visitar el Parque La Carolina, el Centro Histórico de Quito (Patrimonio de la Humanidad de la UNESCO) o experimentar el sistema de transporte moderno de la ciudad tomando el Metro de Quito. Si el tiempo lo permite, también puede ir al Mitad del Mundo (Monumento del Medio del Mundo) para experimentar la única cultura ecuatorial."
+          answer: "Comenzando desde el Parque Bicentenario, puede visitar el Parque La Carolina, la Catedral Metropolitana de Quito, el Centro Histórico de Quito (Patrimonio de la Humanidad de la UNESCO) o experimentar el sistema de transporte moderno de la ciudad tomando el Metro de Quito. Si el tiempo lo permite, también puede ir al Mitad del Mundo (Monumento del Medio del Mundo) para experimentar la única cultura ecuatorial."
         }
       ],
     },
