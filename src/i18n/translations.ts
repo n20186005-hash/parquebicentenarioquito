@@ -201,11 +201,6 @@ export const translations = {
       address: "Antigua terminal aerea, Av. Río Amazonas, 170104 Quito, 厄瓜多尔",
       openMaps: "在 Google Maps 查看位置",
     },
-    contact: {
-      title: "联系方式",
-      phone: "+593 2 398 5100",
-      phoneNote: "建议提前致电确认开放状态及特别活动",
-    },
     footer: {
       callToAction: "作为城市生态的守护者，请与我们一起遵守“不留痕迹（Leave No Trace）”原则，共同保护这片美丽的城市绿肺。",
       text: "© 2026 百年纪念公园旅行指南 · 保留所有权利。\n本网站是一个独立的第三方旅游资讯项目。我们与当地政府或其他官方机构没有任何关联。",
@@ -419,11 +414,6 @@ export const translations = {
       title: "Map Location",
       address: "Antigua terminal aerea, Av. Río Amazonas, 170104 Quito, Ecuador",
       openMaps: "View Location on Google Maps",
-    },
-    contact: {
-      title: "Contact",
-      phone: "+593 2 398 5100",
-      phoneNote: "Call ahead to confirm opening status and special events",
     },
     footer: {
       callToAction: "As a guardian of urban ecology, please join us in observing the \"Leave No Trace\" principles and jointly protect this beautiful urban green lung.",
@@ -639,11 +629,6 @@ export const translations = {
       address: "Antigua terminal aerea, Av. Río Amazonas, 170104 Quito, Ecuador",
       openMaps: "Ver Ubicación en Google Maps",
     },
-    contact: {
-      title: "Contacto",
-      phone: "+593 2 398 5100",
-      phoneNote: "Llame con anticipación para confirmar el estado de apertura y eventos especiales",
-    },
     footer: {
       callToAction: "Como guardián de la ecología urbana, únase a nosotros para observar los principios de \"No Dejar Rastro\" (Leave No Trace) y proteger conjuntamente este hermoso pulmón verde urbano.",
       text: "© 2026 Guía de Viaje del Parque Bicentenario · Todos los derechos reservados.\nEste sitio web es un proyecto independiente de información turística de terceros. No tenemos afiliación con el gobierno local u otras instituciones oficiales.",
@@ -702,6 +687,5 @@ export type Translations = {
   reviews: { title: string; subtitle: string; viewMore: string };
   faq: { title: string; subtitle: string; items: FAQItem[] };
   location: { title: string; address: string; openMaps: string };
-  contact: { title: string; phone: string; phoneNote: string };
   footer: { callToAction: string; text: string; made: string; linksTitle: string; links: LinkItem[] };
 };

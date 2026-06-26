@@ -543,25 +543,6 @@ function Location() {
   );
 }
 
-function Contact() {
-  const { t } = useLang();
-  const phone = t.contact.phone;
-  const cleanPhone = phone.replace(/\s/g, "");
-  return (
-    <section className="section" style={{ paddingTop: 0, paddingBottom: "4rem" }}>
-      <ScrollReveal>
-        <div className="contact-block">
-          <div className="contact-icon">📞</div>
-          <div>
-            <a href={`tel:${cleanPhone}`} className="contact-phone">{phone}</a>
-            <p className="contact-note">{t.contact.phoneNote}</p>
-          </div>
-        </div>
-      </ScrollReveal>
-    </section>
-  );
-}
-
 function Footer() {
   const { t } = useLang();
   return (
@@ -609,7 +590,6 @@ export default function Home(props: { params: Promise<{ locale: string }> }) {
       <Reviews />
       <FAQ />
       <Location />
-      <Contact />
       <Footer />
     </LangProvider>
   );
