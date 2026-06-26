@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "服务条款 | Pozos Azules 旅行指南",
-  description: "Pozos Azules 旅行指南服务条款",
+  title: "Terms of Service | Parque Bicentenario Travel Guide",
+  description: "Terms of service for Parque Bicentenario Travel Guide",
 };
 
 export default function TermsPage() {

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "隐私政策 | Pozos Azules 旅行指南",
-  description: "Pozos Azules 旅行指南隐私政策",
+  title: "Privacy Policy | Parque Bicentenario Travel Guide",
+  description: "Privacy policy for Parque Bicentenario Travel Guide",
 };
 
 export default function PrivacyPage() {

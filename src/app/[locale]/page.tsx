@@ -14,12 +14,12 @@ const GALLERY_IMAGES = Array.from(
 );
 
 const GOOGLE_REVIEWS = [
-  { name: "Carlos Mendoza", avatar: "CM", rating: 5, date: "2024-03-15", text: "Una experiencia increíble. Las vistas de Caracas desde el teleférico son espectaculares. Muy recomendado para locales y turistas." },
-  { name: "Sarah Johnson", avatar: "SJ", rating: 5, date: "2024-02-20", text: "Amazing experience! The cable car ride offers breathtaking panoramic views of Caracas. A must-visit when you're in Venezuela's capital." },
-  { name: "张伟", avatar: "张", rating: 5, date: "2024-04-10", text: "非常棒的体验！缆车沿途风景壮观，从山顶俯瞰整个加拉加斯城，视野极佳。票价也很实惠，强烈推荐！" },
-  { name: "María González", avatar: "MG", rating: 4, date: "2024-01-28", text: "El viaje en teleférico es muy bonito, las vistas son únicas. Lleguen temprano para evitar las filas. La cima del Ávila es espectacular." },
-  { name: "James Wilson", avatar: "JW", rating: 5, date: "2024-03-05", text: "The Warairarepano Cable Car is a fantastic way to see Caracas from above. The ride is smooth and the views are unforgettable. Great value for money!" },
-  { name: "Isabella Rossi", avatar: "IR", rating: 5, date: "2024-02-15", text: "Che bello! Il sistema di teleférico è stato ristrutturato molto bene. Dalla cima si vede tutta la città e anche il mare in lontananza. Da non perdere!" },
+  { name: "Carlos Mendoza", avatar: "CM", rating: 5, date: "2024-05-15", text: "Un parque increíble. Lo que antes fue un aeropuerto ahora es un pulmón verde maravilloso para la ciudad. Ideal para correr, caminar en familia o pasear con mascotas." },
+  { name: "Sarah Johnson", avatar: "SJ", rating: 5, date: "2024-04-20", text: "Amazing transformation! The former airport runways are now beautiful green spaces. Perfect for jogging, cycling, or a family picnic. A must-visit urban park in Quito." },
+  { name: "张伟", avatar: "张", rating: 4, date: "2024-06-10", text: "非常漂亮的城市公园！以前是机场，现在变成了绿地。适合跑步、骑车、野餐。空气很好，视野开阔，是基多市民休闲的好去处。" },
+  { name: "María González", avatar: "MG", rating: 5, date: "2024-03-28", text: "Hermoso parque para caminar, correr o andar en bicicleta. Tiene amplios espacios para mascotas y niños. Muy recomendado para un día de sol en Quito." },
+  { name: "James Wilson", avatar: "JW", rating: 5, date: "2024-05-05", text: "What a fantastic urban park! The transformation from airport to green space is impressive. Great cycling paths, walking trails, and picnic areas. A true gem in Quito." },
+  { name: "Isabella Rossi", avatar: "IR", rating: 4, date: "2024-04-15", text: "Bellissimo parco urbano! Ex aeroporto trasformato in spazio verde. Perfetto per correre, andare in bici o fare un picnic. Consigliato per una giornata all'aria aperta." },
 ];
 
 function ScrollReveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {
@@ -137,9 +137,9 @@ function Hero() {
       </div>
       <a href={MAPS_URL} target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", color: "inherit" }}>
         <div className="hero-meta">
-          <div className="hero-rating">4.7</div>
-          <div className="hero-stars">★★★★★</div>
-          <div className="hero-reviews">7,248 {t.rating.reviews} · {t.rating.source}</div>
+          <div className="hero-rating">4.4</div>
+          <div className="hero-stars">★★★★☆</div>
+          <div className="hero-reviews">23,529 {t.rating.reviews} · {t.rating.source}</div>
         </div>
       </a>
     </section>
@@ -148,14 +148,6 @@ function Hero() {
 
 function About() {
   const { t } = useLang();
-  
-  const renderWithBoldPrefix = (text: string) => {
-    const match = text.match(/^([^：:]+[：:])(.*)/);
-    if (match) {
-      return <><strong style={{ color: "var(--color-deep)" }}>{match[1]}</strong>{match[2]}</>;
-    }
-    return text;
-  };
 
   return (
     <section id="about" className="section">
@@ -184,48 +176,6 @@ function About() {
         <p className="about-text" style={{ whiteSpace: "pre-line" }}>{t.about.p2}</p>
       </ScrollReveal>
       <ScrollReveal>
-        <div style={{ marginTop: "3rem", padding: "2rem", background: "var(--color-cream)", borderRadius: "8px", borderLeft: "4px solid var(--color-gold)", borderRight: "1px solid rgba(0,0,0,0.05)", borderTop: "1px solid rgba(0,0,0,0.05)", borderBottom: "1px solid rgba(0,0,0,0.05)" }}>
-          <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", fontWeight: 600, color: "var(--color-deep)", marginBottom: "1rem" }}>
-            {t.about.myth.title}
-          </h3>
-          <p style={{ fontSize: "1rem", lineHeight: "1.7", color: "var(--color-earth)", fontStyle: "italic", marginBottom: "1.5rem" }}>
-            {t.about.myth.intro}
-          </p>
-          <p style={{ fontSize: "0.95rem", lineHeight: "1.7", color: "var(--color-stone)", whiteSpace: "pre-line", marginBottom: "1.5rem" }}>
-            {t.about.myth.story}
-          </p>
-          <div style={{ padding: "1.5rem", background: "rgba(255,255,255,0.05)", borderRadius: "6px", boxShadow: "0 2px 8px rgba(0,0,0,0.05)", border: "1px solid rgba(0,0,0,0.05)" }}>
-            <strong style={{ color: "var(--color-deep)", display: "block", marginBottom: "0.5rem" }}>{t.about.myth.trivia.title}</strong>
-            <span style={{ fontSize: "0.9rem", color: "var(--color-earth-soft)", lineHeight: "1.6" }}>{t.about.myth.trivia.content}</span>
-          </div>
-        </div>
-      </ScrollReveal>
-      <ScrollReveal>
-        <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.6rem", fontWeight: 600, color: "var(--color-deep)", marginTop: "4rem", marginBottom: "1.5rem" }}>
-          {t.about.astronomy.title}
-        </h3>
-        <p style={{ fontSize: "1rem", lineHeight: "1.7", color: "var(--color-earth)", marginBottom: "2rem" }}>
-          {t.about.astronomy.intro}
-        </p>
-
-        <div style={{ display: "grid", gap: "2rem", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", marginBottom: "2rem" }}>
-          <div style={{ padding: "2rem", background: "rgba(255,255,255,0.05)", borderRadius: "8px", boxShadow: "0 4px 16px rgba(0,0,0,0.06)", border: "1px solid rgba(0,0,0,0.05)" }}>
-            <h4 style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", color: "var(--color-deep)", marginBottom: "1rem" }}>{t.about.astronomy.temple.title}</h4>
-            <p style={{ fontSize: "0.95rem", lineHeight: "1.7", color: "var(--color-stone)", marginBottom: "1rem" }}>{renderWithBoldPrefix(t.about.astronomy.temple.p1)}</p>
-            <p style={{ fontSize: "0.95rem", lineHeight: "1.7", color: "var(--color-stone)" }}>{renderWithBoldPrefix(t.about.astronomy.temple.p2)}</p>
-          </div>
-          <div style={{ padding: "2rem", background: "rgba(255,255,255,0.05)", borderRadius: "8px", boxShadow: "0 4px 16px rgba(0,0,0,0.06)", border: "1px solid rgba(0,0,0,0.05)" }}>
-            <h4 style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", color: "var(--color-deep)", marginBottom: "1rem" }}>{t.about.astronomy.pilaloma.title}</h4>
-            <p style={{ fontSize: "0.95rem", lineHeight: "1.7", color: "var(--color-stone)", marginBottom: "1rem" }}>{renderWithBoldPrefix(t.about.astronomy.pilaloma.p1)}</p>
-            <p style={{ fontSize: "0.95rem", lineHeight: "1.7", color: "var(--color-stone)" }}>{renderWithBoldPrefix(t.about.astronomy.pilaloma.p2)}</p>
-          </div>
-        </div>
-        
-        <div style={{ padding: "1rem 1.5rem", background: "var(--color-teal)", color: "#fff", borderRadius: "6px", fontSize: "0.95rem", lineHeight: "1.6", marginTop: "2rem" }}>
-           <blockquote>{t.about.astronomy.trivia}</blockquote>
-         </div>
-      </ScrollReveal>
-      <ScrollReveal>
         <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", fontWeight: 600, color: "var(--color-deep)", marginTop: "4rem", marginBottom: "2rem" }}>
           {t.about.timeline.title}
         </h3>
@@ -242,29 +192,9 @@ function About() {
       <ScrollReveal>
         <div style={{ marginTop: "3rem", padding: "2rem", background: "#f8f9fa", borderRadius: "8px", borderLeft: "4px solid var(--color-teal)" }}>
           <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", fontWeight: 600, color: "var(--color-deep)", marginBottom: "0.5rem" }}>
-            {t.about.caraDelInca.title}
+            {t.about.management.title}
           </h3>
           <p style={{ fontSize: "0.95rem", lineHeight: "1.7", color: "var(--color-stone)" }}>
-            {t.about.caraDelInca.content}
-          </p>
-        </div>
-      </ScrollReveal>
-      <ScrollReveal>
-        <div style={{ marginTop: "2rem", padding: "2rem", background: "rgba(0,0,0,0.02)", borderRadius: "8px" }}>
-          <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", fontWeight: 600, color: "var(--color-deep)", marginBottom: "0.5rem" }}>
-            {t.about.conservation.title}
-          </h3>
-          <p style={{ fontSize: "0.95rem", lineHeight: "1.7", color: "var(--color-earth-soft)" }}>
-            {t.about.conservation.content}
-          </p>
-        </div>
-      </ScrollReveal>
-      <ScrollReveal>
-        <div style={{ marginTop: "2rem", padding: "1.5rem", background: "rgba(255,255,255,0.05)", borderRadius: "2px", boxShadow: "0 2px 12px rgba(0,0,0,0.04)", border: "1px solid rgba(0,0,0,0.05)" }}>
-          <h4 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", fontWeight: 600, color: "var(--color-deep)", marginBottom: "0.5rem", whiteSpace: "pre-line" }}>
-            {t.about.management.title}
-          </h4>
-          <p style={{ fontSize: "0.9rem", lineHeight: "1.7", color: "var(--color-earth-soft)", whiteSpace: "pre-line" }}>
             {t.about.management.content}
           </p>
         </div>
@@ -448,7 +378,7 @@ function Gallery() {
         <div className="gallery-grid">
           {GALLERY_IMAGES.map((src, i) => (
             <div className="gallery-item" key={i} onClick={() => setLightboxIndex(i)}>
-              <img src={src} alt={`Ingapirca Archaeological Complex ${i + 1}`} loading="lazy" />
+              <img src={src} alt={`Parque Bicentenario ${i + 1}`} loading="lazy" />
             </div>
           ))}
         </div>
@@ -467,7 +397,7 @@ function Gallery() {
         <div className="lightbox" onClick={() => setLightboxIndex(null)}>
           <button className="lightbox-close" onClick={() => setLightboxIndex(null)}>×</button>
           <button className="lightbox-prev" onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length); }}>‹</button>
-          <img src={GALLERY_IMAGES[lightboxIndex]} alt={`Ingapirca Archaeological Complex ${lightboxIndex + 1}`} className="lightbox-img" />
+          <img src={GALLERY_IMAGES[lightboxIndex]} alt={`Parque Bicentenario ${lightboxIndex + 1}`} className="lightbox-img" />
           <button className="lightbox-next" onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex + 1) % GALLERY_IMAGES.length); }}>›</button>
         </div>
       )}
@@ -590,14 +520,14 @@ function Location() {
         <div className="location-section">
           <div className="location-map-container">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.925017488201!2d-78.8706!3d-2.5564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91cd7cf6b5b5b5b%3A0x8c8c8c8c8c8c8c!2sIngapirca%20Archaeological%20Complex!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.443553378906!2d-78.494722!3d-0.139444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d591aa7f3e3b1b%3A0x7c5f8c8c8c8c8c8c!2sParque%20Bicentenario%20Quito!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
               width="800"
               height="600"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Ingapirca Archaeological Complex Location Map"
+              title="Parque Bicentenario Location Map"
             />
           </div>
           <div className="location-info">
