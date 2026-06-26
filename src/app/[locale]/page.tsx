@@ -5,13 +5,9 @@ import Link from "next/link";
 import { LangProvider, useLang } from "@/components/LangProvider";
 import { useTheme } from "next-themes";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import galleryImagesData from "@/gallery-data.json";
 
 const MAPS_URL = "https://maps.app.goo.gl/6nQEPT1UWiVMPZDH8";
-
-const GALLERY_IMAGES = Array.from(
-  { length: 19 },
-  (_: number, i: number) => `/gallery/parque-bicentenario (${i + 1}).jpg`
-);
 
 const GOOGLE_REVIEWS = [
   { name: "Carlos Mendoza", avatar: "CM", rating: 5, date: "2024-05-15", text: "Un parque increíble. Lo que antes fue un aeropuerto ahora es un pulmón verde maravilloso para la ciudad. Ideal para correr, caminar en familia o pasear con mascotas." },
@@ -42,6 +38,7 @@ function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -354,18 +351,19 @@ function Tips() {
 function Gallery() {
   const { t } = useLang();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const galleryImages = galleryImagesData;
 
   useEffect(() => {
-    if (lightboxIndex !== null) {
+    if (lightboxIndex !== null && galleryImages.length > 0) {
       const handleKey = (e: KeyboardEvent) => {
         if (e.key === "Escape") setLightboxIndex(null);
-        if (e.key === "ArrowRight") setLightboxIndex((i) => (i !== null ? (i + 1) % GALLERY_IMAGES.length : null));
-        if (e.key === "ArrowLeft") setLightboxIndex((i) => (i !== null ? (i - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length : null));
+        if (e.key === "ArrowRight") setLightboxIndex((i) => (i !== null ? (i + 1) % galleryImages.length : null));
+        if (e.key === "ArrowLeft") setLightboxIndex((i) => (i !== null ? (i - 1 + galleryImages.length) % galleryImages.length : null));
       };
       window.addEventListener("keydown", handleKey);
       return () => window.removeEventListener("keydown", handleKey);
     }
-  }, [lightboxIndex]);
+  }, [lightboxIndex, galleryImages.length]);
 
   return (
     <section id="gallery" className="section">
@@ -376,7 +374,7 @@ function Gallery() {
       </ScrollReveal>
       <ScrollReveal>
         <div className="gallery-grid">
-          {GALLERY_IMAGES.map((src, i) => (
+          {galleryImages.map((src, i) => (
             <div className="gallery-item" key={i} onClick={() => setLightboxIndex(i)}>
               <img src={src} alt={`Parque Bicentenario ${i + 1}`} loading="lazy" />
             </div>
@@ -393,12 +391,12 @@ function Gallery() {
           </a>
         </div>
       </ScrollReveal>
-      {lightboxIndex !== null && (
+      {lightboxIndex !== null && galleryImages.length > 0 && (
         <div className="lightbox" onClick={() => setLightboxIndex(null)}>
           <button className="lightbox-close" onClick={() => setLightboxIndex(null)}>×</button>
-          <button className="lightbox-prev" onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length); }}>‹</button>
-          <img src={GALLERY_IMAGES[lightboxIndex]} alt={`Parque Bicentenario ${lightboxIndex + 1}`} className="lightbox-img" />
-          <button className="lightbox-next" onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex + 1) % GALLERY_IMAGES.length); }}>›</button>
+          <button className="lightbox-prev" onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex - 1 + galleryImages.length) % galleryImages.length); }}>‹</button>
+          <img src={galleryImages[lightboxIndex]} alt={`Parque Bicentenario ${lightboxIndex + 1}`} className="lightbox-img" />
+          <button className="lightbox-next" onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex + 1) % galleryImages.length); }}>›</button>
         </div>
       )}
     </section>
