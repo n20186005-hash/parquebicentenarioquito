@@ -1,10 +1,8 @@
-import type { NextConfig } from "next";
 import path from "path";
 
-const nextConfig: NextConfig = {
-  output: "export",
+const nextConfig = {
+  output: "standalone" as const,
   outputFileTracingRoot: path.join(__dirname, "./"),
-  turbopack: {},
   webpack: (config) => {
     return config;
   },
