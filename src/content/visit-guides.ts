@@ -1,7 +1,8 @@
+import { nearbyGuides, nearbyTopics } from "./nearby-guides";
 import type { Locale } from "@/i18n/translations";
 
 export const locales = ["en", "es", "zh"] as const;
-export const topics = ["arena-bicentenario", "como-llegar"] as const;
+export const topics = ["arena-bicentenario", "como-llegar", ...nearbyTopics] as const;
 export type Topic = (typeof topics)[number];
 
 export function guidePath(locale: Locale, topic: Topic) {
@@ -30,9 +31,12 @@ type Guide = {
 export const guideMaps: Record<Topic, string> = {
   "arena-bicentenario": "https://www.google.com/maps/search/?api=1&query=Arena+Bicentenario%2C+Quito%2C+Ecuador",
   "como-llegar": parkMap,
+  "parque-la-carolina": "https://www.google.com/maps/search/?api=1&query=Parque+La+Carolina%2C+Quito",
+  "jardin-botanico-quito": "https://www.google.com/maps/search/?api=1&query=Jard%C3%ADn+Bot%C3%A1nico+de+Quito%2C+Rumipamba+E6-264",
 };
 
 export const guides: Record<Topic, Record<Locale, Guide>> = {
+  ...nearbyGuides,
   "arena-bicentenario": {
     es: {
       title: "Arena Bicentenario Quito: conciertos, agenda e ingreso",

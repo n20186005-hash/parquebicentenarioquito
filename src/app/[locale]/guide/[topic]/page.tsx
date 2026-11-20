@@ -1,3 +1,4 @@
+import { factLabels, nearbyPhotos, reviewChecked, reviewSnapshots, reviewText, visitFacts } from "@/content/nearby-guides";
 import { agendaChecked, arenaSessions, cityAgenda, parkHoursSource, parkRouteMaps, parkVisit, quitoFestSource } from "@/content/park-visit";
 import type { Metadata } from "next";
 import Image from "next/image";
@@ -40,6 +41,11 @@ export default async function GuidePage({ params }: Props) {
   const { locale, topic, guide } = resolveGuide(await params);
   const labels = guideLabels[locale];
   const visit = parkVisit[locale];
+  const facts = visitFacts[topic][locale];
+  const factText = factLabels[locale];
+  const review = reviewSnapshots[topic];
+  const reviewCopy = reviewText[locale];
+  const photo = topic === "parque-la-carolina" || topic === "jardin-botanico-quito" ? nearbyPhotos[topic] : null;
   const dateFormat = new Intl.DateTimeFormat(locale, {
     dateStyle: "long",
     timeStyle: "short",
@@ -68,9 +74,27 @@ export default async function GuidePage({ params }: Props) {
         <h1>{guide.title}</h1>
         <p>{guide.description}</p>
         <a className="maps-link" href={guideMaps[topic]}>{labels.map}</a>
-        <Image className="visit-guide-image" src="/gallery/parque-bicentenario (1).jpg" alt={labels.home} width={960} height={540} sizes="(max-width: 960px) 100vw, 850px" />
+        <Image className="visit-guide-image" src={photo?.src || "/gallery/parque-bicentenario (1).jpg"} alt={photo ? guide.title : labels.home} width={photo?.width || 960} height={photo?.height || 540} sizes="(max-width: 960px) 100vw, 850px" />
+        {photo && (
+          <p className="info-card-note">
+            {factText.photo} · <a href={photo.source}>{photo.author} / Wikimedia Commons</a>
+            {" · "}<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+          </p>
+        )}
       </header>
-      {topic === "arena-bicentenario" ? (
+      <section>
+        <h2>{factText.manager}</h2>
+        <p>{facts.manager}</p>
+      </section>
+      <section>
+        <h2>{factText.basic}</h2>
+        <dl className="guide-facts">
+          {(["address", "hours", "fee", "transit"] as const).map((field) => (
+            <div key={field}><dt>{factText[field]}</dt><dd>{facts[field]}</dd></div>
+          ))}
+        </dl>
+      </section>
+      {topic === "arena-bicentenario" && (
         <section id="agenda">
           <h2>{visit.agendaTitle}</h2>
           {upcoming.length > 0 ? (
@@ -89,7 +113,8 @@ export default async function GuidePage({ params }: Props) {
           <p>{visit.checked} <time dateTime={agendaChecked}>{agendaChecked}</time></p>
           <p><a href={cityAgenda}>{visit.calendar}</a></p>
         </section>
-      ) : (
+      )}
+      {topic === "como-llegar" && (
         <section id="entrances">
           <h2>{visit.hoursSource}</h2>
           <p>{visit.hours} <a href={parkHoursSource}>{labels.sources}</a></p>
@@ -106,6 +131,19 @@ export default async function GuidePage({ params }: Props) {
           {section.steps && <ol>{section.steps.map((step) => <li key={step}>{step}</li>)}</ol>}
         </section>
       ))}
+      <section>
+        <h2>{factText.reviews}</h2>
+        {review && (
+          <p>
+            {topic === "como-llegar" && `${reviewCopy.park} · `}
+            <strong>{review.score}/5</strong>
+            {" · "}{review.count} {reviewCopy.count}
+            {" · "}<a href={review.url}>Tripadvisor</a>
+            {" · "}{reviewCopy.checked} <time dateTime={reviewChecked}>{reviewChecked}</time>
+          </p>
+        )}
+        <p><a href={guideMaps[topic]}>{factText.reviewLink}</a></p>
+      </section>
       <section>
         <h2>{labels.related}</h2>
         <ul>
