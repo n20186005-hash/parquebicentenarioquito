@@ -101,7 +101,7 @@ function Nav() {
           Parque Bicentenario
         </span>
       </div>
-      <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+      <div className="nav-controls">
         <div className="nav-links">
           <a href="#about">{t.nav.about}</a>
           <a href="#visiting">{t.nav.visiting}</a>
