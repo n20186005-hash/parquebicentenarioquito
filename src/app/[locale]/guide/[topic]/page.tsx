@@ -1,9 +1,11 @@
+import { landmarkHighlights, landmarkRatings, lodgingAdvice, lodgingDirectory, structureLabels } from "@/content/quito/practical-details";
 import { adviceLabels, visitAdvice } from "@/content/quito/visit-advice";
 import landmarkPhotos from "@/content/quito/photos.json";
 import { landmarkLabels, landmarkGuide } from "@/content/quito/guide-data";
 import { landmarkTopics } from "@/content/quito/landmarks";
 import { factLabels, nearbyPhotos, reviewChecked, reviewSnapshots, reviewText, visitFacts } from "@/content/nearby-guides";
 import { agendaChecked, arenaSessions, cityAgenda, parkHoursSource, parkRouteMaps, parkVisit, quitoFestSource } from "@/content/park-visit";
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -61,7 +63,9 @@ export default async function GuidePage({ params }: Props) {
   const destination = landmark ? new URL(map).searchParams.get("query") : null;
   const directions = destination ? `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}` : null;
   const factText = factLabels[locale];
-  const review = reviewSnapshots[topic];
+  const review = isVisitTopic(topic) ? reviewSnapshots[topic] : landmarkRatings[topic];
+  const structure = structureLabels[locale];
+  const highlight = isVisitTopic(topic) ? null : landmarkHighlights[topic][({ es: 0, en: 1, zh: 2 } as const)[locale]];
   const reviewCopy = reviewText[locale];
   const landmarkPhoto = isVisitTopic(topic) ? null : landmarkPhotos[topic];
   const photo = landmarkPhoto ?? (topic === "parque-la-carolina" || topic === "jardin-botanico-quito" ? nearbyPhotos[topic] : null);
@@ -96,6 +100,13 @@ export default async function GuidePage({ params }: Props) {
         </div>
         <h1>{guide.title}</h1>
         <p>{guide.description}</p>
+        {landmark && (
+          <p>
+            {structure.hours} · {facts.hours}
+            {" · "}
+            {review ? <a href="#visitor-reviews">{review.score}/5 · Tripadvisor</a> : <a href="#visitor-reviews">{factText.reviews}</a>}
+          </p>
+        )}
         <a className="maps-link" href={map}>{labels.map}</a>
         <Image className={landmarkPhoto ? "visit-guide-image landmark-photo" : "visit-guide-image"} src={photo?.src || "/gallery/parque-bicentenario (1).jpg"} alt={photo ? guide.title : labels.home} width={photo?.width || 960} height={photo?.height || 540} sizes="(max-width: 960px) 100vw, 850px" />
         {photo && (
@@ -106,6 +117,15 @@ export default async function GuidePage({ params }: Props) {
           </p>
         )}
       </header>
+      {landmark && (
+        <section>
+          <h2>{structure.discover}</h2>
+          <h3>{adviceText.tips}</h3>
+          <p>{advice}</p>
+          <h3>{structure.highlights}</h3>
+          <p>{highlight}</p>
+        </section>
+      )}
       <section>
         <h2>{landmark ? `${adviceText.about}${locale === "zh" ? "" : " "}${guide.title}` : factText.manager}</h2>
         <p>{facts.manager}</p>
@@ -113,16 +133,34 @@ export default async function GuidePage({ params }: Props) {
       <section>
         <h2>{factText.basic}</h2>
         <dl className="guide-facts">
-          {(["address", "hours", "fee", "transit"] as const).map((field) => (
+          {landmark ? (
+            <>
+              <div><dt>{structure.name}</dt><dd>{guide.title}</dd></div>
+              <div><dt>{structure.city}</dt><dd>{locale === "zh" ? "基多，厄瓜多" : "Quito, Ecuador"}</dd></div>
+              <div><dt>{factText.address}</dt><dd>{facts.address}, Quito</dd></div>
+              <div><dt>{structure.metro}</dt><dd>{landmark.station}</dd></div>
+            </>
+          ) : (["address", "hours", "fee", "transit"] as const).map((field) => (
             <div key={field}><dt>{factText[field]}</dt><dd>{facts[field]}</dd></div>
           ))}
         </dl>
       </section>
-      {advice && (
-        <section>
-          <h2>{adviceText.tips}</h2>
-          <p>{advice}</p>
-        </section>
+      {landmark && (
+        <>
+          <section>
+            <h2>{structure.hours}</h2>
+            <p>{facts.hours}</p>
+            <p><a href={landmark.practicalSource}>{structure.official}</a></p>
+          </section>
+          <section>
+            <h2>{structure.fee}</h2>
+            <p>{facts.fee}</p>
+          </section>
+          <section>
+            <h2>{structure.transport}</h2>
+            <p>{facts.transit}</p>
+          </section>
+        </>
       )}
       {topic === "arena-bicentenario" && (
         <section id="agenda">
@@ -155,22 +193,31 @@ export default async function GuidePage({ params }: Props) {
         </section>
       )}
       {guide.sections.map((section) => (
-        <section key={section.title}>
-          <h2>{section.title}</h2>
-          {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          {section.steps && <ol>{section.steps.map((step) => <li key={step}>{step}</li>)}</ol>}
-        </section>
+        <Fragment key={section.title}>
+          {landmark && "kind" in section && section.kind === "photo" && (
+            <section>
+              <h2>{structure.notice}</h2>
+              <details>
+                <summary>{landmark.faq[0]}</summary>
+                <p>{landmark.faq[1]}</p>
+              </details>
+            </section>
+          )}
+          <section>
+            <h2>{section.title}</h2>
+            {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            {section.steps && <ol>{section.steps.map((step) => <li key={step}>{step}</li>)}</ol>}
+          </section>
+        </Fragment>
       ))}
       {landmark && (
         <section>
-          <h2>{cityLabels.questions}</h2>
-          <details>
-            <summary>{landmark.faq[0]}</summary>
-            <p>{landmark.faq[1]}</p>
-          </details>
+          <h2>{structure.stay}</h2>
+          <p>{lodgingAdvice(locale, landmark.station)}</p>
+          <p><a href={lodgingDirectory}>{structure.officialLodging}</a></p>
         </section>
       )}
-      <section>
+      <section id="visitor-reviews">
         <h2>{factText.reviews}</h2>
         {review && (
           <p>
@@ -196,7 +243,7 @@ export default async function GuidePage({ params }: Props) {
       </section>
       {landmark && (
         <section>
-          <h2>{factText.transit}</h2>
+          <h2>{structure.address}</h2>
           <p>{landmark.address}, Quito</p>
           <p><a href={map}>{labels.map}</a></p>
           {directions && <p><a href={directions}>{adviceText.directions}</a></p>}
