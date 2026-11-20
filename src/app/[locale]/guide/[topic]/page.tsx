@@ -1,3 +1,4 @@
+import { adviceLabels, visitAdvice } from "@/content/quito/visit-advice";
 import landmarkPhotos from "@/content/quito/photos.json";
 import { landmarkLabels, landmarkGuide } from "@/content/quito/guide-data";
 import { landmarkTopics } from "@/content/quito/landmarks";
@@ -55,6 +56,10 @@ export default async function GuidePage({ params }: Props) {
   } : visitFacts[topic][locale];
   const cityLabels = landmarkLabels[locale];
   const map = getGuideMap(topic);
+  const advice = isVisitTopic(topic) ? null : visitAdvice[topic][locale];
+  const adviceText = adviceLabels[locale];
+  const destination = landmark ? new URL(map).searchParams.get("query") : null;
+  const directions = destination ? `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(destination)}` : null;
   const factText = factLabels[locale];
   const review = reviewSnapshots[topic];
   const reviewCopy = reviewText[locale];
@@ -102,7 +107,7 @@ export default async function GuidePage({ params }: Props) {
         )}
       </header>
       <section>
-        <h2>{landmark ? cityLabels.about : factText.manager}</h2>
+        <h2>{landmark ? `${adviceText.about}${locale === "zh" ? "" : " "}${guide.title}` : factText.manager}</h2>
         <p>{facts.manager}</p>
       </section>
       <section>
@@ -113,6 +118,12 @@ export default async function GuidePage({ params }: Props) {
           ))}
         </dl>
       </section>
+      {advice && (
+        <section>
+          <h2>{adviceText.tips}</h2>
+          <p>{advice}</p>
+        </section>
+      )}
       {topic === "arena-bicentenario" && (
         <section id="agenda">
           <h2>{visit.agendaTitle}</h2>
@@ -183,6 +194,14 @@ export default async function GuidePage({ params }: Props) {
         )}
         <p><Link href={`/${locale}#explore-quito`}>{cityLabels.nearby}</Link></p>
       </section>
+      {landmark && (
+        <section>
+          <h2>{factText.transit}</h2>
+          <p>{landmark.address}, Quito</p>
+          <p><a href={map}>{labels.map}</a></p>
+          {directions && <p><a href={directions}>{adviceText.directions}</a></p>}
+        </section>
+      )}
       <section>
         <h2>{labels.sources}</h2>
         <ul>
