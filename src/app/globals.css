@@ -1063,3 +1063,82 @@ body {
     padding: 1.25rem;
   }
 }
+
+/* Visit guides */
+#visit-guides {
+  scroll-margin-top: 6rem;
+}
+
+.visit-guide-card-link,
+.visit-guide section a,
+.visit-guide-links a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.visit-guide {
+  max-width: 900px;
+  line-height: 1.75;
+}
+
+.visit-guide h1,
+.visit-guide h2 {
+  font-family: var(--font-display);
+  color: var(--color-deep);
+  font-weight: 700;
+  line-height: 1.18;
+}
+
+.visit-guide h1 {
+  font-size: clamp(2.35rem, 6vw, 4.25rem);
+  margin: 1.25rem 0 0.75rem;
+}
+
+.visit-guide h2 {
+  font-size: clamp(1.65rem, 4vw, 2.4rem);
+  margin-bottom: 0.65rem;
+}
+
+.visit-guide p,
+.visit-guide li,
+.visit-guide .maps-link {
+  margin-top: 0.5rem;
+}
+
+.visit-guide section {
+  margin-top: 2.4rem;
+}
+
+.visit-guide ul,
+.visit-guide ol {
+  padding-inline-start: 1.45rem;
+}
+
+.visit-guide ul {
+  list-style: disc;
+}
+
+.visit-guide ol {
+  list-style: decimal;
+}
+
+.visit-guide-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  color: var(--color-mountain);
+}
+
+.visit-guide header > .visit-guide-links {
+  justify-content: space-between;
+}
+
+.visit-guide-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 0.85rem;
+  margin-top: 1.25rem;
+}

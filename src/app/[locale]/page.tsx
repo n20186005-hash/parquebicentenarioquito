@@ -5,6 +5,7 @@ import Link from "next/link";
 import { LangProvider, useLang } from "@/components/LangProvider";
 import { useTheme } from "next-themes";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { guideLabels, guidePath, guides, topics } from "@/content/visit-guides";
 import galleryImagesData from "@/gallery-data.json";
 
 const MAPS_URL = "https://maps.app.goo.gl/6nQEPT1UWiVMPZDH8";
@@ -82,7 +83,7 @@ function ThemeToggle() {
 }
 
 function Nav() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -101,6 +102,7 @@ function Nav() {
           <a href="#about">{t.nav.about}</a>
           <a href="#visiting">{t.nav.visiting}</a>
           <a href="#transportation">{t.nav.transportation}</a>
+          <a href="#visit-guides">{guideLabels[locale].guides}</a>
           <a href="#tips">{t.nav.tips}</a>
           <a href="#gallery">{t.gallery.title}</a>
           <a href="#reviews">{t.nav.reviews}</a>
@@ -543,6 +545,29 @@ function Location() {
   );
 }
 
+function VisitGuides() {
+  const { locale } = useLang();
+
+  return (
+    <section id="visit-guides" className="section">
+      <h2 className="section-title">{guideLabels[locale].guides}</h2>
+      <div className="section-divider" />
+      <div className="info-grid">
+        {topics.map((topic) => (
+          <article key={topic} className="info-card">
+            <h3 className="info-card-title">
+              <Link className="visit-guide-card-link" href={guidePath(locale, topic)}>
+                {guides[topic][locale].title}
+              </Link>
+            </h3>
+            <p className="info-card-note">{guides[topic][locale].description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   const { t } = useLang();
   return (
@@ -585,6 +610,7 @@ export default function Home(props: { params: Promise<{ locale: string }> }) {
       <About />
       <Visiting />
       <Transportation />
+      <VisitGuides />
       <Tips />
       <Gallery />
       <Reviews />
