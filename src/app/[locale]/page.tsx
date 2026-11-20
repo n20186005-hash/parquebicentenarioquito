@@ -6,6 +6,7 @@ import { LangProvider, useLang } from "@/components/LangProvider";
 import { useTheme } from "next-themes";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { guideLabels, guidePath, guides, topics } from "@/content/visit-guides";
+import { parkHoursSource, parkVisit } from "@/content/park-visit";
 import galleryImagesData from "@/gallery-data.json";
 
 const MAPS_URL = "https://maps.app.goo.gl/6nQEPT1UWiVMPZDH8";
@@ -203,9 +204,10 @@ function About() {
 }
 
 function Visiting() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
+  const visit = parkVisit[locale];
   const cards = [
-    { title: t.visiting.hours.title, content: t.visiting.hours.content, note: t.visiting.hours.note },
+    { title: t.visiting.hours.title, content: visit.hours, note: t.visiting.hours.note },
     { title: t.visiting.price.title, content: t.visiting.price.content, note: t.visiting.price.note },
     { title: t.visiting.duration.title, content: t.visiting.duration.content, note: t.visiting.duration.note },
   ];
@@ -225,6 +227,16 @@ function Visiting() {
                 <div className="info-card-title">{c.title}</div>
                 <div className="info-card-content">{c.content}</div>
                 <div className="info-card-note">{c.note}</div>
+                {i === 0 && (
+                  <p className="info-card-note">
+                    {visit.arrival}{" "}
+                    <a className="visit-guide-card-link" href={parkHoursSource}>{visit.hoursSource}</a>
+                    {" · "}
+                    <Link className="visit-guide-card-link" href={guidePath(locale, "como-llegar")}>
+                      {guides["como-llegar"][locale].title}
+                    </Link>
+                  </p>
+                )}
               </div>
             ))}
           </div>

@@ -1,8 +1,11 @@
+import { agendaChecked, arenaSessions, cityAgenda, parkHoursSource, parkRouteMaps, parkVisit, quitoFestSource } from "@/content/park-visit";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { guideLabels, guideMaps, guidePath, guides, locales, topics } from "@/content/visit-guides";
+
+export const revalidate = 3600;
 
 type Props = { params: Promise<{ locale: string; topic: string }> };
 
@@ -36,6 +39,17 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function GuidePage({ params }: Props) {
   const { locale, topic, guide } = resolveGuide(await params);
   const labels = guideLabels[locale];
+  const visit = parkVisit[locale];
+  const dateFormat = new Intl.DateTimeFormat(locale, {
+    dateStyle: "long",
+    timeStyle: "short",
+    timeZone: "America/Guayaquil",
+  });
+  const todayInQuito = new Intl.DateTimeFormat("en-CA", {
+    dateStyle: "short",
+    timeZone: "America/Guayaquil",
+  }).format(new Date());
+  const upcoming = arenaSessions.filter(({ localTime }) => localTime.slice(0, 10) >= todayInQuito);
   const languages = { en: "English", es: "Español", zh: "中文" };
 
   return (
@@ -56,6 +70,35 @@ export default async function GuidePage({ params }: Props) {
         <a className="maps-link" href={guideMaps[topic]}>{labels.map}</a>
         <Image className="visit-guide-image" src="/gallery/parque-bicentenario (1).jpg" alt={labels.home} width={960} height={540} sizes="(max-width: 960px) 100vw, 850px" />
       </header>
+      {topic === "arena-bicentenario" ? (
+        <section id="agenda">
+          <h2>{visit.agendaTitle}</h2>
+          {upcoming.length > 0 ? (
+            <>
+              <ul>
+                {upcoming.map(({ localTime, name }) => (
+                  <li key={localTime}>
+                    <time dateTime={localTime}>{dateFormat.format(new Date(localTime))}</time>
+                    {" · "}{name[locale]}{" · Arena Bicentenario"}
+                  </li>
+                ))}
+              </ul>
+              <p>{visit.agendaNote} <a href={quitoFestSource}>{visit.eventSource}</a></p>
+            </>
+          ) : <p>{visit.emptyAgenda}</p>}
+          <p>{visit.checked} <time dateTime={agendaChecked}>{agendaChecked}</time></p>
+          <p><a href={cityAgenda}>{visit.calendar}</a></p>
+        </section>
+      ) : (
+        <section id="entrances">
+          <h2>{visit.hoursSource}</h2>
+          <p>{visit.hours} <a href={parkHoursSource}>{labels.sources}</a></p>
+          <p>{visit.arrival}</p>
+          <ul>
+            {parkRouteMaps.map((url, index) => <li key={url}><a href={url}>{visit.maps[index]}</a></li>)}
+          </ul>
+        </section>
+      )}
       {guide.sections.map((section) => (
         <section key={section.title}>
           <h2>{section.title}</h2>

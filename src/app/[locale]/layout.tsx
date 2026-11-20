@@ -22,8 +22,8 @@ const baseUrl = siteUrl.origin;
 
 const homeMetadata = {
   es: {
-    title: "Parque Bicentenario Quito: cómo llegar y qué visitar",
-    description: "Planifica tu visita al Parque Bicentenario de Quito en el antiguo aeropuerto. Consulta accesos, Metro El Labrador y la guía de conciertos de la Arena.",
+    title: "Parque Bicentenario Quito: horarios, entradas y Metro",
+    description: "Consulta el horario del Parque Bicentenario de Quito, los accesos y la llegada en Metro por El Labrador. Revisa también la agenda de Arena Bicentenario.",
   },
   en: {
     title: "Parque Bicentenario Quito: Visitor Guide and Directions",
