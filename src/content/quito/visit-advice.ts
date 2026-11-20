@@ -46,7 +46,7 @@ export const visitAdvice = {
   alameda: {
     es: "Usa la laguna para orientarte y deja el observatorio para una visita aparte. Comprueba el acceso al Churo si quieres subir al mirador.",
     en: "Use the lagoon to orient yourself and allow separate time for the observatory. Check access to El Churo if you want to climb it.",
-    zh: "先以湖泊辨位，另留時間參觀天文台。想上 El Churo 觀景台，先查現場通行狀況。",
+    zh: "先以湖泊辨位，另留時間參觀天文臺。想上 El Churo 觀景臺，先查現場通行狀況。",
   },
   ejido: {
     es: "Si tienes poco tiempo, enfoca el paseo en el arco. Para combinarlo con el MuNa, vuelve a la avenida Patria y cruza por los pasos marcados.",
@@ -111,7 +111,7 @@ export const visitAdvice = {
   urrutia: {
     es: "Busca el número N2-60. Compara las habitaciones por su función; la visita se concentra en objetos que conservan el uso doméstico de la casa.",
     en: "Look for number N2-60. Compare the rooms by function, paying attention to objects that show how the house was used.",
-    zh: "認準 N2-60 門牌。可按房間用途觀察家具，從生活物件理解昔日的起居方式。",
+    zh: "認準 N2-60 門牌。可按房間用途觀察傢俱，從生活物件理解昔日的起居方式。",
   },
   "mena-caamano": {
     es: "Distingue las exposiciones del Centro Cultural del recorrido del museo de cera. Pregunta cuál es el último ingreso al museo.",

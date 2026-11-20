@@ -86,13 +86,13 @@ export default async function GuidePage({ params }: Props) {
   const languages = { en: "English", es: "Español", zh: "中文" };
 
   return (
-    <main lang={locale} className="section visit-guide">
+    <main lang={locale === "zh" ? "zh-Hant" : locale} className="section visit-guide">
       <header>
         <div className="visit-guide-links">
           <Link href={`/${locale}`}>{labels.home}</Link>
           <nav aria-label={labels.languages} className="visit-guide-links">
             {locales.map((language) => (
-              <Link key={language} href={guidePath(language, topic)} hrefLang={language} lang={language} aria-current={language === locale ? "page" : undefined}>
+              <Link key={language} href={guidePath(language, topic)} hrefLang={language} lang={language === "zh" ? "zh-Hant" : language} aria-current={language === locale ? "page" : undefined}>
                 {languages[language]}
               </Link>
             ))}

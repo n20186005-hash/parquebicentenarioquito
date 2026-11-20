@@ -46,7 +46,7 @@ export function lodgingAdvice(locale: Locale, station: string) {
   const copy = {
     es: historic ? "El Centro Histórico es una base práctica para encadenar varias visitas a pie. Antes de reservar, compara la pendiente y el acceso en vehículo desde el alojamiento al punto de partida." : north ? "Compara alojamientos en el entorno de La Carolina si crees combinar este paseo con el Bicentenario. Comprueba el tramo final desde tu alojamiento y prevé un taxi si la ruta sube por Bellavista." : "La Mariscal y el entorno de El Ejido son bases prácticas para enlazar el Metro con otras visitas. Comprueba la salida de estación más cómoda y, cuando haga falta, el punto de recogida en taxi.",
     en: historic ? "The Historic Centre is a practical base for several sights on foot. Before booking, compare gradients and vehicle access between the accommodation and the start of your walk." : north ? "Compare places around La Carolina if pairing this outing with Bicentenario. Check the last leg from your accommodation and allow for a taxi if the route climbs through Bellavista." : "La Mariscal and the El Ejido area are convenient bases for combining the Metro with other visits. Check your station exit and, where needed, a taxi pickup point.",
-    zh: historic ? "若要步行串遊多處老城景點，可比較歷史城區的住宿。訂房前留意旅館到路線起點的坡度及車輛接送條件。" : north ? "計畫同遊二百周年公園時，可比較拉卡羅利納公園一帶的住宿。先查宿處到景點的最後一段，若須經貝拉維斯塔上坡，可安排搭車。" : "拉馬里斯卡爾及埃希多公園一帶可作為搭地鐵串遊的住宿區。先確認較方便的地鐵出口，必要時約好計程車接車點。",
+    zh: historic ? "若要步行串遊多處老城景點，可比較歷史城區的住宿。訂房前留意旅館到路線起點的坡度及車輛接送條件。" : north ? "計畫同遊二百週年公園時，可比較拉卡羅利納公園一帶的住宿。先查宿處到景點的最後一段，若須經貝拉維斯塔上坡，可安排搭車。" : "拉馬里斯卡爾及埃希多公園一帶可作為搭地鐵串遊的住宿區。先確認較方便的地鐵出口，必要時約好計程車接車點。",
   };
   return copy[locale];
 }
@@ -72,7 +72,7 @@ export const landmarkHighlights = {
   catedral: ["Escalinata, muro lateral blanco y cubiertas escalonadas.", "Staircase, white side elevation and layered roofline.", "廣場階梯、白色側立面與層疊屋頂。"],
   "la-ronda": ["Curvas, balcones y talleres de la calle Morales.", "Bends, balconies and workshops along Calle Morales.", "Morales 街的轉角、陽臺與工坊。"],
   itchimbia: ["Palacio de Cristal y panorámica de cubiertas del centro.", "Crystal Palace and views of the historic rooftops.", "水晶宮鐵構與老城屋脊全景。"],
-  alameda: ["Laguna, observatorio y rampa espiral de El Churo.", "Lagoon, observatory and the spiral ramp at El Churo.", "湖泊、天文台與 El Churo 螺旋坡道。"],
+  alameda: ["Laguna, observatorio y rampa espiral de El Churo.", "Lagoon, observatory and the spiral ramp at El Churo.", "湖泊、天文臺與 El Churo 螺旋坡道。"],
   ejido: ["Arco de La Circasiana y esculturas junto a los senderos.", "La Circasiana arch and sculptures along the paths.", "La Circasiana 石拱與步道雕塑。"],
   "museo-ciudad": ["Patio y salas del antiguo Hospital San Juan de Dios.", "Courtyard and galleries of the former San Juan de Dios hospital.", "舊聖胡安德迪奧斯醫院的庭院與展廳。"],
   yaku: ["Fuentes exteriores y muestras sobre el agua y la ciudad.", "Outdoor fountains and exhibits on water and the city.", "戶外噴泉與水資源、城市生活展覽。"],
@@ -85,7 +85,7 @@ export const landmarkHighlights = {
   belmonte: ["Graderío circular y arena adaptada para espectáculos.", "Circular seating and an arena adapted for performances.", "環形階梯座席與改作展演的場地。"],
   "san-marcos": ["Atrio de la iglesia y frentes residenciales en Junín.", "Church forecourt and residential façades on Junín.", "教堂前庭與 Junín 街住宅立面。"],
   alabado: ["Colección precolombina, vanos y patios de una casa histórica.", "Pre-Columbian collection and the openings and patios of a historic house.", "前哥倫布時期收藏、歷史宅邸的門窗與庭院。"],
-  urrutia: ["Mobiliario, retratos y distribución de una casa quiteña.", "Furniture, portraits and the layout of a Quito home.", "基多故居的家具、肖像與房間配置。"],
+  urrutia: ["Mobiliario, retratos y distribución de una casa quiteña.", "Furniture, portraits and the layout of a Quito home.", "基多故居的傢俱、肖像與房間配置。"],
   "mena-caamano": ["Escenas de cera y pasillos del Centro Cultural Metropolitano.", "Wax scenes and corridors of the Metropolitan Cultural Centre.", "歷史蠟像場景與都會文化中心的走廊。"],
   "arte-contemporaneo": ["Exposiciones y patios del antiguo Hospital Militar.", "Exhibitions and courtyards of the former Military Hospital.", "舊軍事醫院的當代展覽與庭院。"],
   observatorio: ["Torre histórica e instrumentos de astronomía y cartografía.", "Historic tower and instruments for astronomy and mapping.", "歷史觀測塔、天文及測繪儀器。"],

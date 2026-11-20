@@ -3,6 +3,9 @@
 import { landmarkLabels, landmarkGuide } from "@/content/quito/guide-data";
 import { landmarkTopics } from "@/content/quito/landmarks";
 
+import { interfaceCopy } from "@/i18n/interface";
+import { legal } from "@/i18n/legal";
+import { parkReviews } from "@/i18n/reviews";
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { LangProvider, useLang } from "@/components/LangProvider";
@@ -14,14 +17,7 @@ import galleryImagesData from "@/gallery-data.json";
 
 const MAPS_URL = "https://maps.app.goo.gl/6nQEPT1UWiVMPZDH8";
 
-const GOOGLE_REVIEWS = [
-  { name: "Carlos Mendoza", avatar: "CM", rating: 5, date: "2024-05-15", text: "Un parque increíble. Lo que antes fue un aeropuerto ahora es un pulmón verde maravilloso para la ciudad. Ideal para correr, caminar en familia o pasear con mascotas." },
-  { name: "Sarah Johnson", avatar: "SJ", rating: 5, date: "2024-04-20", text: "Amazing transformation! The former airport runways are now beautiful green spaces. Perfect for jogging, cycling, or a family picnic. A must-visit urban park in Quito." },
-  { name: "张伟", avatar: "张", rating: 4, date: "2024-06-10", text: "非常漂亮的城市公园！以前是机场，现在变成了绿地。适合跑步、骑车、野餐。空气很好，视野开阔，是基多市民休闲的好去处。" },
-  { name: "María González", avatar: "MG", rating: 5, date: "2024-03-28", text: "Hermoso parque para caminar, correr o andar en bicicleta. Tiene amplios espacios para mascotas y niños. Muy recomendado para un día de sol en Quito." },
-  { name: "James Wilson", avatar: "JW", rating: 5, date: "2024-05-05", text: "What a fantastic urban park! The transformation from airport to green space is impressive. Great cycling paths, walking trails, and picnic areas. A true gem in Quito." },
-  { name: "Isabella Rossi", avatar: "IR", rating: 4, date: "2024-04-15", text: "Bellissimo parco urbano! Ex aeroporto trasformato in spazio verde. Perfetto per correre, andare in bici o fare un picnic. Consigliato per una giornata all'aria aperta." },
-];
+
 
 function ScrollReveal({ children, className = "" }: { children: React.ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -39,6 +35,7 @@ function ScrollReveal({ children, className = "" }: { children: React.ReactNode;
 }
 
 function ThemeToggle() {
+  const { locale } = useLang();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -53,7 +50,7 @@ function ThemeToggle() {
     <button
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className="theme-toggle-btn"
-      aria-label="Toggle theme"
+      aria-label={interfaceCopy[locale].theme}
       style={{
         background: "none",
         border: "none",
@@ -98,7 +95,7 @@ function Nav() {
     <nav className={`site-nav ${scrolled ? "scrolled" : ""}`}>
       <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
         <span style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", fontWeight: 700, color: "#fff" }}>
-          Parque Bicentenario
+          {interfaceCopy[locale].park}
         </span>
       </div>
       <div className="nav-controls">
@@ -366,7 +363,7 @@ function Tips() {
 }
 
 function Gallery() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const galleryImages = galleryImagesData;
 
@@ -393,7 +390,7 @@ function Gallery() {
         <div className="gallery-grid">
           {galleryImages.map((src, i) => (
             <div className="gallery-item" key={i} onClick={() => setLightboxIndex(i)}>
-              <img src={src} alt={`Parque Bicentenario ${i + 1}`} loading="lazy" />
+              <img src={src} alt={`${interfaceCopy[locale].photo} ${i + 1}`} loading="lazy" />
             </div>
           ))}
         </div>
@@ -410,10 +407,10 @@ function Gallery() {
       </ScrollReveal>
       {lightboxIndex !== null && galleryImages.length > 0 && (
         <div className="lightbox" onClick={() => setLightboxIndex(null)}>
-          <button className="lightbox-close" onClick={() => setLightboxIndex(null)}>×</button>
-          <button className="lightbox-prev" onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex - 1 + galleryImages.length) % galleryImages.length); }}>‹</button>
-          <img src={galleryImages[lightboxIndex]} alt={`Parque Bicentenario ${lightboxIndex + 1}`} className="lightbox-img" />
-          <button className="lightbox-next" onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex + 1) % galleryImages.length); }}>›</button>
+          <button className="lightbox-close" aria-label={interfaceCopy[locale].close} onClick={() => setLightboxIndex(null)}>×</button>
+          <button className="lightbox-prev" aria-label={interfaceCopy[locale].previous} onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex - 1 + galleryImages.length) % galleryImages.length); }}>‹</button>
+          <img src={galleryImages[lightboxIndex]} alt={`${interfaceCopy[locale].photo} ${lightboxIndex + 1}`} className="lightbox-img" />
+          <button className="lightbox-next" aria-label={interfaceCopy[locale].next} onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex + 1) % galleryImages.length); }}>›</button>
         </div>
       )}
     </section>
@@ -421,7 +418,7 @@ function Gallery() {
 }
 
 function Reviews() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
 
   return (
     <section id="reviews" className="section">
@@ -433,7 +430,7 @@ function Reviews() {
       </ScrollReveal>
       <ScrollReveal>
         <div className="reviews-grid">
-          {GOOGLE_REVIEWS.map((review, i) => (
+          {parkReviews.map((review, i) => (
             <div className="review-card" key={i}>
               <div className="review-header">
                 <div className="review-avatar">{review.avatar}</div>
@@ -445,7 +442,7 @@ function Reviews() {
                   {"★".repeat(review.rating)}{"☆".repeat(5 - review.rating)}
                 </div>
               </div>
-              <p className="review-text">{review.text}</p>
+              <p className="review-text">{review.text[locale]}</p>
               <div className="review-source">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#4285F4"/>
@@ -523,7 +520,7 @@ function FAQ() {
 }
 
 function Location() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
   return (
     <section id="location" className="section">
       <ScrollReveal>
@@ -542,7 +539,7 @@ function Location() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Parque Bicentenario Location Map"
+              title={interfaceCopy[locale].map}
             />
           </div>
           <div className="location-info">
@@ -611,7 +608,7 @@ function ExploreQuito() {
 }
 
 function Footer() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
   return (
     <footer className="site-footer">
       <div className="footer-links">
@@ -625,14 +622,14 @@ function Footer() {
         </div>
       </div>
       <div className="footer-legal" style={{ maxWidth: "1100px", margin: "0 auto", padding: "1rem 2rem 0", textAlign: "center" }}>
-        <Link href="/privacy" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none", fontSize: "0.8rem", marginRight: "1.5rem" }}>
-          Privacy Policy
+        <Link href={`/${locale}/privacy`} style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none", fontSize: "0.8rem", marginRight: "1.5rem" }}>
+          {legal[locale].titles.privacy}
         </Link>
-        <Link href="/terms" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none", fontSize: "0.8rem", marginRight: "1.5rem" }}>
-          Terms of Service
+        <Link href={`/${locale}/terms`} style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none", fontSize: "0.8rem", marginRight: "1.5rem" }}>
+          {legal[locale].titles.terms}
         </Link>
-        <Link href="/cookies" style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none", fontSize: "0.8rem" }}>
-          Cookie Settings
+        <Link href={`/${locale}/cookies`} style={{ color: "rgba(255,255,255,0.5)", textDecoration: "none", fontSize: "0.8rem" }}>
+          {legal[locale].titles.cookies}
         </Link>
       </div>
       <p className="footer-text" style={{ marginTop: "2rem", fontSize: "0.9rem", fontWeight: 600, color: "var(--color-gold)" }}>

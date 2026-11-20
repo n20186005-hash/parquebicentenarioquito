@@ -3,215 +3,215 @@ export type Locale = "zh" | "en" | "es";
 export const translations = {
   zh: {
     nav: {
-      about: "公园概览",
-      visiting: "游览指南",
-      transportation: "交通接驳",
-      tips: "游览建议",
-      gallery: "照片画廊",
-      reviews: "游客评价",
-      faq: "常见问题",
-      location: "地图位置",
+      about: "公園概覽",
+      visiting: "遊覽指南",
+      transportation: "交通接駁",
+      tips: "遊覽建議",
+      gallery: "照片畫廊",
+      reviews: "遊客評價",
+      faq: "常見問題",
+      location: "地圖位置",
     },
     hero: {
-      tagline: "基多最大的城市生态公园",
-      title: "百年纪念公园",
+      tagline: "基多最大的城市生態公園",
+      title: "二百週年公園",
       subtitle: "Parque Bicentenario",
-      cta: "探索公园之旅",
+      cta: "探索公園之旅",
     },
     rating: {
-      reviews: "条评价",
-      source: "Google 评论",
+      reviews: "條評價",
+      source: "Google 評論",
     },
     about: {
-      title: "公园概览：从惊险机场到城市绿肺的传奇蜕变",
-      p1: "📖 传奇历史：飞向自由的跑道\n\n名字的由来：为何叫百年纪念？\n“百年纪念”旨在致敬1822年皮钦查战役，纪念厄瓜多尔独立200周年。这片土地见证了国家的腾飞，如今则守护着市民的宁静。\n\n一场拒绝商业化的城市奇迹\n想象一下，几十年前，巨大的波音客机就在你头顶几十米处呼啸而过，穿梭在安第斯山脉和密集的都市高楼之间。由于基多城市的高速扩张，旧机场最终被完全包围。曾经，大型客机在降落时必须惊险地贴着市区的屋顶和山脉穿梭，这里也被认为是世界上最具挑战性的机场之一。\n\n随着2013年2月19日最后一架航班起飞，这座处于高海拔且惊险万分的旧机场完成了它的历史使命。基多市政府面临着一个巨大的诱惑：这块位于市中心的125公顷黄金地段如果卖给房地产商将价值连城。但基多做出了一个造福子孙的决定——将其完全保留并打造成免费的公共生态公园。仅仅两个月后的2013年4月27日，这里奇迹般地化身为生态公园。开园首日，市长带领上万名市民涌入这里，象征性地“收复”了这片土地，这是一次全球城市规划史上堪称典范的“空间回收（Upcycling）”奇迹。",
-      p2: "🗺️ 探索公园：您不容错过的必打卡亮点\n\n🚲 在3公里长的飞机跑道上骑行\n保留下来的长达3000多米、宽46米的原始沥青主跑道，如今变成了世界上最宽阔的自行车和溜冰道。\n\n✈️ 厄瓜多尔空军航空航天博物馆\n公园内保留了部分航空元素，游客可以在这里看到退役的战斗机和航空历史展览。\n\n🏛️ 基多大都会会议中心（CCMQ）\n建在旧航站楼遗址区域，如今是基多举办大型国际展览和文化活动的核心地标。\n\n🌿 黄树林（Bosque Amarillo）与湿地\n公园不仅保留了工业遗迹，还种植了数以千计的安第斯高原特有植物，形成了观鸟绝佳的微型生态系统。",
+      title: "公園概覽：從驚險機場到城市綠肺的傳奇蛻變",
+      p1: "📖 傳奇歷史：飛向自由的跑道\n\n名字的由來：為何叫二百週年？\n“二百週年”旨在致敬1822年皮欽查戰役，紀念厄瓜多獨立200週年。這片土地見證了國家的騰飛，如今則守護著市民的寧靜。\n\n一場拒絕商業化的城市奇蹟\n想像一下，幾十年前，巨大的波音客機就在你頭頂幾十米處呼嘯而過，穿梭在安第斯山脈和密集的都市高樓之間。由於基多城市的高速擴張，舊機場最終被完全包圍。曾經，大型客機在降落時必須驚險地貼著市區的屋頂和山脈穿梭，這裡也被認為是世界上最具挑戰性的機場之一。\n\n隨著2013年2月19日最後一架航班起飛，這座處於高海拔且驚險萬分的舊機場完成了它的歷史使命。基多市政府面臨著一個巨大的誘惑：這塊位於市中心的125公頃黃金地段如果賣給房地產商將價值連城。但基多做出了一個造福子孫的決定——將其完全保留並打造成免費的公共生態公園。僅僅兩個月後的2013年4月27日，這裡奇蹟般地化身為生態公園。開園首日，市長帶領上萬名市民湧入這裡，象徵性地“收復”了這片土地，這是一次全球城市規劃史上堪稱典範的“空間回收”奇蹟。",
+      p2: "🗺️ 探索公園：您不容錯過的必打卡亮點\n\n🚲 在3公里長的飛機跑道上騎行\n保留下來的長達3000多米、寬46米的原始瀝青主跑道，如今變成了世界上最寬闊的腳踏車和溜冰道。\n\n✈️ 厄瓜多空軍航空航天博物館\n公園內保留了部分航空元素，遊客可以在這裡看到退役的戰鬥機和航空歷史展覽。\n\n🏛️ 基多大都會會議中心（CCMQ）\n建在舊航站樓遺址區域，如今是基多舉辦大型國際展覽和文化活動的核心地標。\n\n🌿 黃樹林（Bosque Amarillo）與溼地\n公園不僅保留了工業遺蹟，還種植了數以千計的安第斯高原特有植物，形成了觀鳥絕佳的微型生態系統。",
       highlights: {
-        title: "景点速览 (Quick Facts)",
+        title: "景點速覽",
         items: [
-          "地理位置：厄瓜多尔，基多，Antigua terminal aerea, Av. Río Amazonas",
-          "面积：125 公顷（基多最大城市公园）",
-          "前身：旧苏克雷元帅国际机场（1930s-2013）",
-          "核心亮点：3公里旧跑道骑行、航空航天博物馆、安第斯湿地观鸟",
-          "开放时间：市府公布的常规时段为 05:00–19:00，活动期间入口可能调整。",
+          "地理位置：厄瓜多，基多，Antigua terminal aerea, Av. Río Amazonas",
+          "面積：125 公頃（基多最大城市公園）",
+          "前身：舊蘇克雷元帥國際機場（1930s-2013）",
+          "核心亮點：3公里舊跑道騎行、航空航天博物館、安第斯溼地觀鳥",
+          "開放時間：市府公佈的常規時段為 05:00–19:00，活動期間入口可能調整。",
         ],
       },
       timeline: {
-        title: "历史时间轴",
+        title: "歷史時間軸",
         events: [
-          { period: "1930年代", description: "苏克雷元帅国际机场在现址正式落成并投入使用" },
-          { period: "2013年2月19日", description: "最后一架航班起飞，旧机场正式关闭，结束了其历史使命" },
-          { period: "2013年4月27日", description: "百年纪念公园奇迹般地正式对公众开放，上万名市民涌入“收复”这片土地" },
-          { period: "至今", description: "公园持续扩建和完善，增设大都会会议中心和生态湿地，成为基多最大的城市绿肺" }
+          { period: "1930年代", description: "蘇克雷元帥國際機場在現址正式落成並投入使用" },
+          { period: "2013年2月19日", description: "最後一架航班起飛，舊機場正式關閉，結束了其歷史使命" },
+          { period: "2013年4月27日", description: "二百週年公園奇蹟般地正式對公眾開放，上萬名市民湧入“收復”這片土地" },
+          { period: "至今", description: "公園持續擴建和完善，增設大都會會議中心和生態溼地，成為基多最大的城市綠肺" }
         ]
       },
       management: {
-        title: "公园的管理与官方机构",
-        content: "百年纪念公园由基多公共空间与工程局（EPMMOP）直接管理和维护。作为基多最重要的城市公园之一，公园的日常运营包括绿化养护、安保服务、活动场地租赁以及生态保护项目的实施。公园内设有游客服务中心，提供园区地图和基本咨询服务。建议通过官方网站或电话查询开放状态及特别活动信息。",
+        title: "公園的管理與官方機構",
+        content: "二百週年公園由基多公共空間與工程局（EPMMOP）直接管理和維護。作為基多最重要的城市公園之一，公園的日常運營包括綠化養護、安保服務、活動場地租賃以及生態保護專案的實施。公園內設有遊客服務中心，提供園區地圖和基本諮詢服務。建議透過官方網站或電話查詢開放狀態及特別活動資訊。",
       },
     },
     visiting: {
-      title: "游览指南 (Visitor Information)",
+      title: "遊覽指南",
       hours: {
-        title: "开放时间",
-        content: "市府公布的常规时段为 05:00–19:00。",
-        note: "部分设施（如游客中心、洗手间）的开放时间可能略有不同，建议出发前通过官方渠道确认。",
+        title: "開放時間",
+        content: "市府公佈的常規時段為 05:00–19:00。",
+        note: "部分設施（如遊客中心、洗手間）的開放時間可能略有不同，建議出發前透過官方渠道確認。",
       },
       price: {
-        title: "门票参考",
-        content: "免费入园\n部分特别活动或设施可能需要单独购票",
-        note: "公园对公众免费开放。宠物入园需系好牵引绳，并及时清理宠物排泄物。",
+        title: "門票參考",
+        content: "免費入園\n部分特別活動或設施可能需要單獨購票",
+        note: "公園對公眾免費開放。寵物入園需繫好牽引繩，並及時清理寵物排洩物。",
       },
       duration: {
-        title: "建议游览时长与气候",
-        content: "建议预留 2 - 4 小时",
-        note: "基多海拔约2,850米，气候温和但紫外线强。建议穿着舒适的运动鞋，并做好防晒准备。",
+        title: "建議遊覽時長與氣候",
+        content: "建議預留 2 - 4 小時",
+        note: "基多海拔約2,850米，氣候溫和但紫外線強。建議穿著舒適的運動鞋，並做好防曬準備。",
       },
       animals: {
-        title: "公园居民：多样化的生态环境",
-        content: "作为一个生态公园，百年纪念公园是多种鸟类和小型动物的栖息地。您可能会在湿地保护区观察到各种安第斯高原鸟类。请尊重野生动物，不要投喂或惊扰它们。宠物可以入园，但必须全程系好牵引绳。",
+        title: "公園居民：多樣化的生態環境",
+        content: "作為一個生態公園，二百週年公園是多種鳥類和小型動物的棲息地。您可能會在溼地保護區觀察到各種安第斯高原鳥類。請尊重野生動物，不要投餵或驚擾它們。寵物可以入園，但必須全程繫好牽引繩。",
       },
       bring: {
-        title: "游览准备",
+        title: "遊覽準備",
         items: [
-          "高倍数防晒霜和遮阳帽（高原紫外线极强）",
-          "舒适的运动鞋（园区面积大，需要较长时间步行）",
-          "饮用水和轻食（园区内有小吃摊，但建议自备）",
-          "相机或手机（公园景观优美，非常适合摄影）",
-          "宠物主人请携带宠物粪便清理袋",
+          "高倍數防曬霜和遮陽帽（高原紫外線極強）",
+          "舒適的運動鞋（園區面積大，需要較長時間步行）",
+          "飲用水和輕食（園區內有小吃攤，但建議自備）",
+          "相機或手機（公園景觀優美，非常適合攝影）",
+          "寵物主人請攜帶寵物糞便清理袋",
         ],
       },
     },
     transportation: {
-      title: "交通接驳：如何前往百年纪念公园",
+      title: "交通接駁：如何前往二百週年公園",
       airport: {
-        title: "从塔巴菲拉新机场（UIO）出发",
-        content: "百年纪念公园位于基多市区北部，距离新机场约 40 公里，车程约 1 小时。以下是详细的交通方案：",
+        title: "從塔巴菲拉新機場（UIO）出發",
+        content: "二百週年公園位於基多市區北部，距離新機場約 40 公里，車程約 1 小時。以下是詳細的交通方案：",
         options: [
           {
-            name: "方案 A：出租车/网约车（最便捷）",
+            name: "方案 A：計程車/網約車（最便捷）",
             price: "$25 - $35 美元",
-            time: "约 1 小时",
+            time: "約 1 小時",
             steps: [
-              "第 1 步：提取行李后，在机场到达大厅的官方出租车柜台或网约车接驳区乘车。",
-              "第 2 步：告知司机目的地为「Parque Bicentenario」或「Antigua terminal aerea」。",
-              "第 3 步：车程约 1 小时，具体时间取决于交通状况。",
-              "第 4 步：公园有多个入口，建议让司机停在靠近您想先参观区域的入口。",
+              "第 1 步：提取行李後，在機場到達大廳的官方計程車櫃檯或網約車接駁區乘車。",
+              "第 2 步：告知司機目的地為「Parque Bicentenario」或「Antigua terminal aerea」。",
+              "第 3 步：車程約 1 小時，具體時間取決於交通狀況。",
+              "第 4 步：公園有多個入口，建議讓司機停在靠近您想先參觀區域的入口。",
             ]
           },
           {
-            name: "方案 B：机场快线巴士（经济实惠）",
+            name: "方案 B：機場快線巴士（經濟實惠）",
             price: "$2 - $3 美元",
-            time: "约 1.5 小时",
+            time: "約 1.5 小時",
             steps: [
-              "第 1 步：在机场外乘坐前往基多市中心（Centro Histórico）或北部商务区（La Carolina）的机场快线巴士。",
-              "第 2 步：在「Río Amazonas」或「La Carolina」站下车。",
-              "第 3 步：换乘出租车或步行约 15-20 分钟到达公园入口。",
+              "第 1 步：在機場外乘坐前往基多市中心（Centro Histórico）或北部商務區（La Carolina）的機場快線巴士。",
+              "第 2 步：在「Río Amazonas」或「La Carolina」站下車。",
+              "第 3 步：換乘計程車或步行約 15-20 分鐘到達公園入口。",
             ]
           },
           {
-            name: "方案 C：基多地铁系统（最新最酷的选择）",
+            name: "方案 C：基多地鐵系統（最新最酷的選擇）",
             price: "$0.45 美元",
-            time: "约 1 小时",
+            time: "約 1 小時",
             steps: [
-              "第 1 步：从机场乘坐接驳巴士或出租车前往最近的地铁站（如 Estación La Magdalena）。",
-              "第 2 步：乘坐基多地铁（Metro de Quito）至「Estación El Labrador」或「Estación Jipijapa」。",
-              "第 3 步：出站后换乘出租车或步行约 10-15 分钟到达公园。",
+              "第 1 步：從機場乘坐接駁巴士或計程車前往最近的地鐵站（如 Estación La Magdalena）。",
+              "第 2 步：乘坐基多地鐵（Metro de Quito）至「Estación El Labrador」或「Estación Jipijapa」。",
+              "第 3 步：出站後換乘計程車或步行約 10-15 分鐘到達公園。",
             ]
           }
         ]
       },
       city: {
-        title: "从基多市区自驾或租车",
-        content: "如果您在基多租车，前往百年纪念公园的路线非常清晰。",
+        title: "從基多市區自駕或租車",
+        content: "如果您在基多租車，前往二百週年公園的路線非常清晰。",
         steps: [
-          "导航设置：在 Google Maps 或 Waze 中输入「Parque Bicentenario Quito」或地址「Av. Río Amazonas, Quito」。",
-          "行车路线：从基多市中心或北部商务区出发，沿「Av. Río Amazonas」或「Av. de la Prensa」行驶，根据路标指示即可到达公园入口。",
-          "停车指南：公园周边设有多个停车场，但周末及节假日车位较紧张，建议上午 10:00 前抵达。",
+          "導航設定：在 Google Maps 或 Waze 中輸入「Parque Bicentenario Quito」或地址「Av. Río Amazonas, Quito」。",
+          "行車路線：從基多市中心或北部商務區出發，沿「Av. Río Amazonas」或「Av. de la Prensa」行駛，根據路標指示即可到達公園入口。",
+          "停車指南：公園周邊設有多個停車場，但週末及節假日車位較緊張，建議上午 10:00 前抵達。",
         ]
       },
       selfDrive: {
-        title: "从其他城市前往基多",
-        content: "如果您从厄瓜多尔其他主要城市前来，通常需要先抵达基多，再转车前往公园。",
+        title: "從其他城市前往基多",
+        content: "如果您從厄瓜多其他主要城市前來，通常需要先抵達基多，再轉車前往公園。",
         steps: [
-          "从瓜亚基尔出发：乘坐长途巴士或国内航班飞往基多，再转乘出租车或地铁前往公园（总行程约 10-12 小时）。",
-          "从昆卡出发：乘坐夜间巴士或国内航班飞往基多，再转乘出租车或地铁前往公园（建议至少安排两天一夜的行程）。",
-          "导航提醒：基多市区交通较为拥堵，建议使用导航 App 实时避开拥堵路段。",
+          "從瓜亞基爾出發：乘坐長途巴士或國內航班飛往基多，再轉乘計程車或地鐵前往公園（總行程約 10-12 小時）。",
+          "從昆卡出發：乘坐夜間巴士或國內航班飛往基多，再轉乘計程車或地鐵前往公園（建議至少安排兩天一夜的行程）。",
+          "導航提醒：基多市區交通較為擁堵，建議使用導航 App 實時避開擁堵路段。",
         ]
       }
     },
     tips: {
-      title: "游览建议",
+      title: "遊覽建議",
       items: [
-        "最佳游览时间：清晨 06:00 - 09:00 或傍晚 16:00 - 18:00，气温凉爽宜人，适合散步和慢跑。",
-        "拍照打卡：旧航站楼遗址和湿地保护区是公园内最受欢迎的拍照地点。",
-        "家庭出游：公园内设有儿童游乐设施和宠物活动区，非常适合全家出游。",
-        "尊重自然：百年纪念公园是重要的生态保护区，请在指定区域内活动，不要采摘植物或惊扰野生动物。",
+        "最佳遊覽時間：清晨 06:00 - 09:00 或傍晚 16:00 - 18:00，氣溫涼爽宜人，適合散步和慢跑。",
+        "拍照打卡：舊航站樓遺址和溼地保護區是公園內最受歡迎的拍照地點。",
+        "家庭出遊：公園內設有兒童遊樂設施和寵物活動區，非常適合全家出遊。",
+        "尊重自然：二百週年公園是重要的生態保護區，請在指定區域內活動，不要採摘植物或驚擾野生動物。",
       ],
     },
     gallery: {
       title: "精彩照片",
-      viewMore: "在 Google Maps 查看更多相片",
+      viewMore: "在 Google Maps 檢視更多相片",
     },
     reviews: {
-      title: "游客评价",
-      subtitle: "来自 Google Maps 的真实评价",
-      viewMore: "在 Google Maps 查看更多评价",
+      title: "遊客評價",
+      subtitle: "來自 Google Maps 的真實評價",
+      viewMore: "在 Google Maps 檢視更多評價",
     },
     faq: {
-      title: "常见问题 (FAQ)",
-      subtitle: "深入了解百年纪念公园",
+      title: "常見問題",
+      subtitle: "深入瞭解二百週年公園",
       items: [
         {
-          question: "百年纪念公园的前身是什么？",
-          answer: "百年纪念公园的前身是苏克雷元帅国际机场（Aeropuerto Internacional Mariscal Sucre），该机场于2013年2月19日正式关闭。仅仅两个月后的2013年4月27日，这里奇迹般地化身为城市生态公园并对外开放。"
+          question: "二百週年公園的前身是什麼？",
+          answer: "二百週年公園的前身是蘇克雷元帥國際機場（Aeropuerto Internacional Mariscal Sucre），該機場於2013年2月19日正式關閉。僅僅兩個月後的2013年4月27日，這裡奇蹟般地化身為城市生態公園並對外開放。"
         },
         {
-          question: "公园是否免费开放？",
-          answer: "是的，百年纪念公园对公众免费开放。您无需购买门票即可进入公园游览。不过，部分特别活动或设施（如租赁场地举办活动）可能需要单独付费。"
+          question: "公園是否免費開放？",
+          answer: "是的，二百週年公園對公眾免費開放。您無需購買門票即可進入公園遊覽。不過，部分特別活動或設施（如租賃場地舉辦活動）可能需要單獨付費。"
         },
         {
-          question: "公园适合跑步和骑行吗？",
-          answer: "非常适合！公园内设有专门的慢跑径和自行车道，全长约 5-8 公里。许多基多市民会在清晨或傍晚来这里跑步、骑行或散步。您也可以自带自行车，或在公园附近租赁。"
+          question: "公園適合跑步和騎行嗎？",
+          answer: "非常適合！公園內設有專門的慢跑徑和腳踏車道，全長約 5-8 公里。許多基多市民會在清晨或傍晚來這裡跑步、騎行或散步。您也可以自帶腳踏車，或在公園附近租賃。"
         },
         {
-          question: "可以在公园内野餐吗？",
-          answer: "可以。公园内设有专门的野餐区和休息区，您可以在指定区域内野餐。但请注意，为了保护环境，请勿在草地上生火或使用明火。同时，请务必将垃圾带走或扔进垃圾桶。"
+          question: "可以在公園內野餐嗎？",
+          answer: "可以。公園內設有專門的野餐區和休息區，您可以在指定區域內野餐。但請注意，為了保護環境，請勿在草地上生火或使用明火。同時，請務必將垃圾帶走或扔進垃圾桶。"
         },
         {
-          question: "公园内有洗手间吗？",
-          answer: "有。公园内设有多个公共洗手间，分布在主要景点附近。洗手间维护状况良好，免费使用。建议在游览前先查看园区地图，标记好洗手间的位置。"
+          question: "公園內有洗手間嗎？",
+          answer: "有。公園內設有多個公共洗手間，分佈在主要景點附近。洗手間維護狀況良好，免費使用。建議在遊覽前先檢視園區地圖，標記好洗手間的位置。"
         },
         {
-          question: "如果只会说英语，游览时会有障碍吗？",
-          answer: "基本不会。基多是一个国际化的城市，许多标识都有英文翻译。如果您需要帮助，公园的工作人员和服务人员通常能用西班牙语和基本的英语进行沟通。如果您只会说中文，建议提前下载离线翻译 App（如 Google Translate）。"
+          question: "如果只會說英語，遊覽時會有障礙嗎？",
+          answer: "基本不會。基多是一個國際化的城市，許多標識都有英文翻譯。如果您需要幫助，公園的工作人員和服務人員通常能用西班牙語和基本的英語進行溝通。如果您只會說中文，建議提前下載離線翻譯 App（如 Google Translate）。"
         },
         {
-          question: "百年纪念公园是否适合观鸟？",
-          answer: "非常适合！作为一个生态公园，百年纪念公园内设有湿地保护区，是多种安第斯高原鸟类的栖息地。如果您是观鸟爱好者，建议携带双筒望远镜，并在清晨或傍晚时分前往湿地保护区，您可能会观察到多种珍稀鸟类。"
+          question: "二百週年公園是否適合觀鳥？",
+          answer: "非常適合！作為一個生態公園，二百週年公園內設有溼地保護區，是多種安第斯高原鳥類的棲息地。如果您是觀鳥愛好者，建議攜帶雙筒望遠鏡，並在清晨或傍晚時分前往溼地保護區，您可能會觀察到多種珍稀鳥類。"
         },
         {
-          question: "附近还有哪些值得一游的景点？",
-          answer: "从百年纪念公园出发，您可以顺路参观拉卡罗利纳公园（La Carolina Park）、基多大都会教堂（Catedral Metropolitana de Quito）、基多老城（Centro Histórico，联合国教科文组织世界遗产）或乘坐基多地铁体验这座城市的现代化交通系统。如果时间充裕，还可以前往赤道纪念碑（Mitad del Mundo）感受独特的赤道文化。"
+          question: "附近還有哪些值得一遊的景點？",
+          answer: "從二百週年公園出發，您可以順路參觀拉卡羅利納公園（Parque La Carolina）、基多大都會教堂（Catedral Metropolitana de Quito）、基多老城（Centro Histórico，聯合國教科文組織世界遺產）或乘坐基多地鐵體驗這座城市的現代化交通系統。如果時間充裕，還可以前往赤道紀念碑（Mitad del Mundo）感受獨特的赤道文化。"
         }
       ],
     },
     location: {
-      title: "地图位置",
-      address: "Antigua terminal aerea, Av. Río Amazonas, 170104 Quito, 厄瓜多尔",
-      openMaps: "在 Google Maps 查看位置",
+      title: "地圖位置",
+      address: "Antigua terminal aerea, Av. Río Amazonas, 170104 Quito, 厄瓜多",
+      openMaps: "在 Google Maps 檢視位置",
     },
     footer: {
-      callToAction: "作为城市生态的守护者，请与我们一起遵守“不留痕迹（Leave No Trace）”原则，共同保护这片美丽的城市绿肺。",
-      text: "© 2026 百年纪念公园旅行指南 · 保留所有权利。\n本网站是一个独立的第三方旅游资讯项目。我们与当地政府或其他官方机构没有任何关联。",
-      made: "本网站是一个独立的第三方旅游资讯项目。我们与当地政府或其他官方机构没有任何关联。为探索者而制",
-      linksTitle: "相关链接",
+      callToAction: "作為城市生態的守護者，請與我們一起遵守“不留痕跡”原則，共同保護這片美麗的城市綠肺。",
+      text: "© 2026 二百週年公園旅行指南 · 保留所有權利。\n本網站是一個獨立的第三方旅遊資訊專案。我們與當地政府或其他官方機構沒有任何關聯。",
+      made: "本網站是一個獨立的第三方旅遊資訊專案。我們與當地政府或其他官方機構沒有任何關聯。為探索者而制",
+      linksTitle: "相關連結",
       links: [
-        { name: "基多公共空间与工程局 (EPMMOP)", url: "https://www.epmmop.gob.ec/" },
-        { name: "基多旅游局 (Visit Quito)", url: "https://visitquito.ec/" },
-        { name: "基多大都会会议中心 (CCMQ)", url: "https://ccmq.ec/" },
-        { name: "基多地铁系统 (Metro de Quito)", url: "https://metrodequito.gob.ec/" },
-        { name: "旧苏克雷元帅国际机场 (Wikipedia)", url: "https://es.wikipedia.org/wiki/Antiguo_Aeropuerto_Internacional_Mariscal_Sucre" },
+        { name: "基多公共空間與工程局 (EPMMOP)", url: "https://www.epmmop.gob.ec/" },
+        { name: "基多旅遊局 (Visit Quito)", url: "https://visitquito.ec/" },
+        { name: "基多大都會會議中心 (CCMQ)", url: "https://ccmq.ec/" },
+        { name: "基多地鐵系統 (Metro de Quito)", url: "https://metrodequito.gob.ec/" },
+        { name: "舊蘇克雷元帥國際機場 (Wikipedia)", url: "https://es.wikipedia.org/wiki/Antiguo_Aeropuerto_Internacional_Mariscal_Sucre" },
       ],
     },
   },
@@ -452,10 +452,10 @@ export const translations = {
     },
     about: {
       title: "Descripción General: De Aeropuerto Peligroso a Pulmón Verde Urbano",
-      p1: "📖 Historia Legendaria: La Pista Hacia la Libertad\n\nEl Origen del Nombre: ¿Por qué Bicentenario?\nEl nombre \"Parque Bicentenario\" rinde homenaje a la Batalla de Pichincha de 1822, conmemorando el bicentenario de la independencia de Ecuador. Esta tierra ha sido testigo del ascenso de la nación y ahora guarda la tranquilidad de sus ciudadanos.\n\nUn Milagro que Rechazó la Comercialización\nImagínese hace décadas, enormes aviones de pasajeros Boeing rugiendo a pocos metros sobre su cabeza, navegando a través de las montañas de los Andes y los densos rascacielos de la ciudad. Con la rápida expansión de Quito, el antiguo aeropuerto quedó completamente rodeado. El 19 de febrero de 2013, despegó el último vuelo y este emocionante aeropuerto completó su misión histórica. El gobierno de la ciudad enfrentó una gran tentación: esta ubicación privilegiada de 125 hectáreas valdría una fortuna si se vendiera a desarrolladores inmobiliarios. Pero Quito tomó una decisión para las generaciones futuras: preservarla por completo y transformarla en un parque ecológico público gratuito. Apenas dos meses después, el 27 de abril de 2013, se abrió milagrosamente como parque ecológico. El día de la inauguración, el alcalde lideró a decenas de miles de ciudadanos para \"recuperar\" simbólicamente esta tierra, creando un milagro ejemplar de \"reciclaje urbano\" (upcycling) en la historia de la planificación urbana mundial.",
+      p1: "📖 Historia Legendaria: La Pista Hacia la Libertad\n\nEl Origen del Nombre: ¿Por qué Bicentenario?\nEl nombre \"Parque Bicentenario\" rinde homenaje a la Batalla de Pichincha de 1822, conmemorando el bicentenario de la independencia de Ecuador. Esta tierra ha sido testigo del ascenso de la nación y ahora guarda la tranquilidad de sus ciudadanos.\n\nUn Milagro que Rechazó la Comercialización\nImagínese hace décadas, enormes aviones de pasajeros Boeing rugiendo a pocos metros sobre su cabeza, navegando a través de las montañas de los Andes y los densos rascacielos de la ciudad. Con la rápida expansión de Quito, el antiguo aeropuerto quedó completamente rodeado. El 19 de febrero de 2013, despegó el último vuelo y este emocionante aeropuerto completó su misión histórica. El gobierno de la ciudad enfrentó una gran tentación: esta ubicación privilegiada de 125 hectáreas valdría una fortuna si se vendiera a desarrolladores inmobiliarios. Pero Quito tomó una decisión para las generaciones futuras: preservarla por completo y transformarla en un parque ecológico público gratuito. Apenas dos meses después, el 27 de abril de 2013, se abrió milagrosamente como parque ecológico. El día de la inauguración, el alcalde lideró a decenas de miles de ciudadanos para \"recuperar\" simbólicamente esta tierra, creando un milagro ejemplar de \"reciclaje urbano\" en la historia de la planificación urbana mundial.",
       p2: "🗺️ Explora el Parque: Puntos Destacados\n\n🚲 Ciclismo en la Pista de 3km\nLa pista principal de asfalto original conservada de 3.000 metros de largo y 46 metros de ancho se ha convertido ahora en la pista de ciclismo y patinaje más ancha del mundo.\n\n✈️ Museo Aeronáutico y del Espacio de la FAE\nEl parque conserva algunos elementos de aviación, y los visitantes pueden ver aviones de combate retirados y exhibiciones de historia de la aviación.\n\n🏛️ Centro de Convenciones Metropolitano de Quito (CCMQ)\nConstruido en el sitio de la antigua terminal, ahora es el hito central de Quito para albergar grandes exposiciones internacionales y eventos culturales.\n\n🌿 Bosque Amarillo y Humedales\nEl parque no solo preserva el patrimonio industrial, sino que también cuenta con miles de plantas andinas endémicas, creando un excelente microecosistema para la observación de aves.",
       highlights: {
-        title: "Datos Rápidos (Quick Facts)",
+        title: "Datos básicos",
         items: [
           "Ubicación: Antigua terminal aerea, Av. Río Amazonas, Quito, Ecuador",
           "Área: 125 hectáreas (El parque urbano más grande de Quito)",
@@ -630,7 +630,7 @@ export const translations = {
       openMaps: "Ver Ubicación en Google Maps",
     },
     footer: {
-      callToAction: "Como guardián de la ecología urbana, únase a nosotros para observar los principios de \"No Dejar Rastro\" (Leave No Trace) y proteger conjuntamente este hermoso pulmón verde urbano.",
+      callToAction: "Como guardián de la ecología urbana, únase a nosotros para observar los principios de \"No Dejar Rastro\" y proteger conjuntamente este hermoso pulmón verde urbano.",
       text: "© 2026 Guía de Viaje del Parque Bicentenario · Todos los derechos reservados.\nEste sitio web es un proyecto independiente de información turística de terceros. No tenemos afiliación con el gobierno local u otras instituciones oficiales.",
       made: "Este sitio web es un proyecto independiente de información turística de terceros. No tenemos afiliación con el gobierno local u otras instituciones oficiales. Hecho para exploradores",
       linksTitle: "Enlaces Relacionados",

@@ -41,7 +41,7 @@ export const landmarkLabels = {
   },
   zh: {
     nearby: "基多周邊遊覽",
-    nearbyIntro: "從二百周年公園搭地鐵，串遊其他公園與歷史城區景點。",
+    nearbyIntro: "從二百週年公園搭地鐵，串遊其他公園與歷史城區景點。",
     about: "關於景點",
     design: "歷史與建築觀察",
     walk: "步行遊覽路線",
@@ -51,7 +51,7 @@ export const landmarkLabels = {
     metro: "基多地鐵車站與營運時間",
     publicAccess: "公共空間；周圍室內場館另有入場安排。",
     parkAccess: "公園一般遊覽免費；園內場館與活動可有各自安排。",
-    indoorAccess: "請查看場館公布的入場方式與票價。",
+    indoorAccess: "請檢視場館公佈的入場方式與票價。",
     checkHours: "出發前請查閱場館的參觀公告。",
     parkHours: "請查閱市府公告及園內場館的開放時間。",
     resized: "縮小尺寸",

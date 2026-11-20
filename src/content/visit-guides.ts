@@ -21,7 +21,7 @@ const closures = `${city}/2026/08/28/accesos-al-parque-bicentenario-estaran-cerr
 export const guideLabels = {
   es: { home: "Parque Bicentenario", guides: "Guías de visita", related: "Planifica el resto de tu visita", map: "Abrir Google Maps", sources: "Fuentes oficiales", languages: "Idiomas" },
   en: { home: "Parque Bicentenario", guides: "Visit guides", related: "Plan the rest of your visit", map: "Open Google Maps", sources: "Official sources", languages: "Languages" },
-  zh: { home: "基多二百周年公園", guides: "遊覽指南", related: "繼續規劃行程", map: "開啟 Google 地圖", sources: "官方資料來源", languages: "語言" },
+  zh: { home: "基多二百週年公園", guides: "遊覽指南", related: "繼續規劃行程", map: "開啟 Google 地圖", sources: "官方資料來源", languages: "語言" },
 } satisfies Record<Locale, Record<string, string>>;
 
 type Guide = {
@@ -63,11 +63,11 @@ export const guides: Record<(typeof visitTopics)[number], Record<Locale, Guide>>
     },
     zh: {
       title: "基多 Arena Bicentenario：演唱會、活動公告與入場",
-      description: "查詢基多二百周年公園今天有什麼活動、如何確認演唱會入口，以及散場後如何搭車。",
+      description: "查詢基多二百週年公園今天有什麼活動、如何確認演唱會入口，以及散場後如何搭車。",
       sections: [
         { title: "今天有什麼活動？", paragraphs: ["到基多市府的 Quito Informa 搜尋活動名稱與日期，再以主辦方公告核對細節。確認活動頁標示基多的 Arena Bicentenario，並留意搜尋結果可能仍顯示已結束的場次。"] },
-        { title: "出發看演出前", paragraphs: ["Arena 是二百周年公園園區內的活動場地。演唱會觀眾與一般遊園旅客可能使用不同入口。"], steps: ["核對活動日期、開放入場時間及票券所屬區域。", "開啟場地地圖，對照票券或市府活動公告指定的入口。", "查閱道路管制、可攜入物品與回程地鐵服務。"] },
-        { title: "入場與散場交通", paragraphs: ["2026 年 8 月 FTC Live al Parque 舉辦期間，市府公布公園入口暫時關閉，並安排觀眾從會展中心旁入場。前往其他場次時，請查閱該場活動的交通公告。", "El Labrador 是基多地鐵 1 號線北端終點。若演出較晚結束，先查末班車，並約在管制範圍外集合。"] },
+        { title: "出發看演出前", paragraphs: ["Arena 是二百週年公園園區內的活動場地。演唱會觀眾與一般遊園旅客可能使用不同入口。"], steps: ["核對活動日期、開放入場時間及票券所屬區域。", "開啟場地地圖，對照票券或市府活動公告指定的入口。", "查閱道路管制、可攜入物品與回程地鐵服務。"] },
+        { title: "入場與散場交通", paragraphs: ["2026 年 8 月 FTC Live al Parque 舉辦期間，市府公佈公園入口暫時關閉，並安排觀眾從會展中心旁入場。前往其他場次時，請查閱該場活動的交通公告。", "El Labrador 是基多地鐵 1 號線北端終點。若演出較晚結束，先查末班車，並約在管制範圍外集合。"] },
       ],
       sources: [{ name: "Quito Informa 市府公告", url: city }, { name: "Quito Informa：FTC Live 入場公告", url: closures }, { name: "基多地鐵營運時間與車站", url: metro }],
     },
@@ -94,10 +94,10 @@ export const guides: Record<(typeof visitTopics)[number], Record<Locale, Guide>>
       sources: [{ name: "Metro de Quito · hours and stations", url: metro }, { name: "Quito Informa · gates and EPMMOP management", url: gates }, { name: "Quito Informa · example event closures", url: closures }],
     },
     zh: {
-      title: "基多二百周年公園怎麼去：El Labrador 地鐵與公園入口",
-      description: "從 El Labrador 地鐵站前往基多二百周年公園，依舊機場園區內的目的地選擇入口。",
+      title: "基多二百週年公園怎麼去：El Labrador 地鐵與公園入口",
+      description: "從 El Labrador 地鐵站前往基多二百週年公園，依舊機場園區內的目的地選擇入口。",
       sections: [
-        { title: "搭地鐵到 El Labrador", paragraphs: ["搭乘基多地鐵 1 號線往 El Labrador，終點站在公園南端。如果約在園區北側，出站前先核對地圖，再決定是否沿園區外道路前往。"], steps: ["到基多地鐵官網查看造訪當天的 1 號線營運時間。", "抵達 El Labrador 後，依車站指標找往公園的出口。", "確認集合地點，並查閱所選公園入口是否開放。"] },
+        { title: "搭地鐵到 El Labrador", paragraphs: ["搭乘基多地鐵 1 號線往 El Labrador，終點站在公園南端。如果約在園區北側，出站前先核對地圖，再決定是否沿園區外道路前往。"], steps: ["到基多地鐵官網檢視造訪當天的 1 號線營運時間。", "抵達 El Labrador 後，依車站指標找往公園的出口。", "確認集合地點，並查閱所選公園入口是否開放。"] },
         { title: "步行與開車入口", paragraphs: ["基多市府 2022 年公報列有 Amazonas 大道、Rafael Aulestia、Real Audiencia、Ramos、Luis Tufiño，以及 Amazonas 大道第 1 停車場入口。可按街道定位，出發當天再核對入口及停車狀況。", "公園位於基多北部舊蘇克雷元帥機場原址。搭計程車時，可以同時提供公園名稱和預計前往的入口或街道。"] },
         { title: "沿舊機場跑道短程散步", paragraphs: ["第一次搭地鐵來，可由南側進入，挑一段對外開放的舊跑道步行，再原路返回。部分空曠路段遮蔭較少；遇到大型活動，先查閱當天的出入口管制。"] },
       ],
