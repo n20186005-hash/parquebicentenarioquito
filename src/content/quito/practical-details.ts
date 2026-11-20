@@ -10,6 +10,11 @@ const contemporary = "https://museosquito.gob.ec/espacios/centro-de-arte-contemp
 const cableCar = "https://teleferico.com.ec/horarios-y-tarifas/";
 
 export const practicalDetails: Partial<Record<LandmarkSlug, LocalizedDetails>> = {
+  "plaza-grande": {
+    es: { hours: "Plaza pública al aire libre. Los actos cívicos y controles pueden afectar el paso.", fee: "El paseo por la plaza es gratuito. Las visitas a edificios vecinos se organizan por separado." },
+    en: { hours: "Open-air public square. Civic events and security controls may affect access.", fee: "The square is free to visit. Visits to neighbouring buildings are arranged separately." },
+    zh: { hours: "戶外公共廣場。市政活動或安全管制期間，部分通行路線可能調整。", fee: "廣場免費參觀，周圍建築的參觀與票價請分別查詢。" },
+  },
   alabado: {
     es: { hours: "Miércoles a domingo, 09:00–17:00. Lunes y martes, con reserva.", fee: "Adultos USD 10, estudiantes con identificación y adultos mayores nacionales USD 5. Menores de 8 años, personas con discapacidad y guías de turismo entran gratis. El último miércoles del mes es gratuito con reserva.", source: alabado },
     en: { hours: "Wednesday to Sunday, 09:00–17:00. Monday and Tuesday by reservation.", fee: "Adults USD 10. Students with ID and Ecuadorian seniors USD 5. Children under eight, people with disabilities and tour guides enter free. The last Wednesday of the month is free with a reservation.", source: alabado },
@@ -52,6 +57,7 @@ export function lodgingAdvice(locale: Locale, station: string) {
 }
 
 export const landmarkRatings: Partial<Record<LandmarkSlug, { score: string; count: number; url: string }>> = {
+  "plaza-grande": { score: "4.4", count: 1511, url: "https://www.tripadvisor.com/Attraction_Review-g294308-d314202-Reviews-Plaza_de_la_Independencia_Plaza_Grande-Quito_Pichincha_Province.html" },
   "san-francisco": { score: "4.5", count: 1731, url: "https://www.tripadvisor.com/Attraction_Review-g294308-d314185-Reviews-Iglesia_y_Convento_de_San_Francisco-Quito_Pichincha_Province.html" },
   "catedral": { score: "4.3", count: 480, url: "https://www.tripadvisor.com/Attraction_Review-g294308-d314605-Reviews-Catedral_Metropolitana_de_Quito-Quito_Pichincha_Province.html" },
   "alameda": { score: "3.7", count: 40, url: "https://www.tripadvisor.com/Attraction_Review-g294308-d590821-Reviews-Parque_La_Alameda-Quito_Pichincha_Province.html" },

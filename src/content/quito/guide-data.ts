@@ -167,6 +167,7 @@ export function landmarkGuide(slug: LandmarkSlug, locale: Locale) {
       { name: labels.source, url: landmark.source },
       ...(extra?.source && extra.source !== landmark.source && slug !== "teleferiqo" ? [{ name: labels.checkHours, url: extra.source }] : []),
       { name: labels.metro, url: metro },
+      ...(slug === "plaza-grande" ? [{ name: "Quito Informa", url: "https://quitoinforma.quito.gob.ec/2022/04/12/el-monumento-a-la-independencia-se-renueva/" }] : []),
       ...(slug === "teleferiqo" ? [{ name: labels.checkHours, url: "https://teleferico.com.ec/horarios-y-tarifas/" }] : []),
       ...(isPark ? [{ name: labels.parkHours, url: parkSchedule }] : []),
     ],
