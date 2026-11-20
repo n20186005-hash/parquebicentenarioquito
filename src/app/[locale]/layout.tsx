@@ -1,3 +1,6 @@
+import { interfaceCopy } from "@/i18n/interface";
+import { ThemeProvider } from "next-themes";
+import { notFound } from "next/navigation";
 import { siteUrl } from "@/content/site-url";
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
@@ -30,8 +33,8 @@ const homeMetadata = {
     description: "Plan a visit to Quito’s former airport park. Find park entrances, directions from El Labrador and information on Arena Bicentenario concerts.",
   },
   zh: {
-    title: "基多二百周年公園｜遊覽指南、地鐵交通與活動",
-    description: "規劃基多二百周年公園之旅，查看舊機場園區入口、El Labrador 地鐵交通與 Arena Bicentenario 活動指南。",
+    title: "基多二百週年公園｜遊覽指南、地鐵交通與活動",
+    description: "規劃基多二百週年公園之旅，檢視舊機場園區入口、El Labrador 地鐵交通與 Arena Bicentenario 活動指南。",
   },
 };
 
@@ -39,28 +42,19 @@ export async function generateMetadata(
   { params }: { params: Promise<{ locale: string }> }
 ): Promise<Metadata> {
   const { locale } = await params;
-  const { title, description } = locale === "es" || locale === "zh" ? homeMetadata[locale] : homeMetadata.en;
+  if (locale !== "en" && locale !== "es" && locale !== "zh") notFound();
+  const { title, description } = homeMetadata[locale];
+  const copy = interfaceCopy[locale];
   return {
     metadataBase: new URL(baseUrl),
     title: {
       default: title,
-      template: "%s | Parque Bicentenario",
+      template: `%s | ${copy.park}`,
     },
     description,
-    keywords: [
-      "Parque Bicentenario",
-      "Bicentennial Park Quito",
-      "Quito tourism",
-      " urban ecological park Ecuador",
-      " former airport park",
-      " Quito parks",
-      " Parque Bicentenario Quito Ecuador",
-      " Quito metro",
-      " EPMMOP",
-    ],
-    authors: [{ name: "Parque Bicentenario Travel Guide" }],
-    creator: "Parque Bicentenario Travel Guide",
-    publisher: "Parque Bicentenario Travel Guide",
+    authors: [{ name: copy.title }],
+    creator: copy.title,
+    publisher: copy.title,
     formatDetection: {
       email: false,
       address: false,
@@ -68,18 +62,18 @@ export async function generateMetadata(
     },
     openGraph: {
       type: "website",
-      locale: locale === 'es' ? 'es_EC' : locale === 'zh' ? 'zh_CN' : 'en_US',
-      alternateLocale: ["en_US", "es_EC", "zh_CN"].filter(l => !l.startsWith(locale)),
+      locale: locale === 'es' ? 'es_EC' : locale === 'zh' ? 'zh_TW' : 'en_US',
+      alternateLocale: ["en_US", "es_EC", "zh_TW"].filter(l => !l.startsWith(locale)),
       url: `${baseUrl}/${locale}`,
       title,
       description,
-      siteName: "Parque Bicentenario Travel Guide",
+      siteName: copy.title,
       images: [
         {
           url: "/gallery/parque-bicentenario (1).jpg",
           width: 1200,
           height: 630,
-          alt: "Parque Bicentenario - Quito, Ecuador",
+          alt: copy.photo,
         },
       ],
     },
@@ -115,6 +109,10 @@ export async function generateMetadata(
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#faf8f5" },
+    { media: "(prefers-color-scheme: dark)", color: "#121212" },
+  ],
 };
 
 export function generateStaticParams() {
@@ -130,8 +128,12 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
   return (
-    <div lang={locale} className={`${cormorant.variable} ${dmSans.variable}`}>
-      {children}
-    </div>
+    <html lang={locale === "zh" ? "zh-Hant" : locale} suppressHydrationWarning>
+      <body className="antialiased">
+        <ThemeProvider attribute="data-theme" defaultTheme="system" enableSystem>
+          <div className={`${cormorant.variable} ${dmSans.variable}`}>{children}</div>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

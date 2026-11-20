@@ -1,6 +1,7 @@
 "use client";
 
 import { useLang } from "./LangProvider";
+import { interfaceCopy } from "@/i18n/interface";
 import type { Locale } from "@/i18n/translations";
 
 const LANG_LABELS: Record<Locale, string> = {
@@ -22,7 +23,7 @@ export function LanguageSwitcher() {
               window.location.href = `/${l}${window.location.hash}`;
             }
           }}
-          aria-label={`Switch to ${l}`}
+          aria-label={interfaceCopy[locale].language[l]}
         >
           {LANG_LABELS[l]}
         </button>
