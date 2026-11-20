@@ -1,3 +1,4 @@
+import { siteUrl } from "@/content/site-url";
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "../globals.css";
@@ -17,20 +18,35 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const baseUrl = `https://${process.env.CURRENT_SITE_DOMAIN || "parquebicentenarioquito.com"}`;
+const baseUrl = siteUrl.origin;
+
+const homeMetadata = {
+  es: {
+    title: "Parque Bicentenario Quito: horarios, entradas y Metro",
+    description: "Consulta el horario del Parque Bicentenario de Quito, los accesos y la llegada en Metro por El Labrador. Revisa también la agenda de Arena Bicentenario.",
+  },
+  en: {
+    title: "Parque Bicentenario Quito: Visitor Guide and Directions",
+    description: "Plan a visit to Quito’s former airport park. Find park entrances, directions from El Labrador and information on Arena Bicentenario concerts.",
+  },
+  zh: {
+    title: "基多二百周年公園｜遊覽指南、地鐵交通與活動",
+    description: "規劃基多二百周年公園之旅，查看舊機場園區入口、El Labrador 地鐵交通與 Arena Bicentenario 活動指南。",
+  },
+};
 
 export async function generateMetadata(
   { params }: { params: Promise<{ locale: string }> }
 ): Promise<Metadata> {
   const { locale } = await params;
+  const { title, description } = locale === "es" || locale === "zh" ? homeMetadata[locale] : homeMetadata.en;
   return {
     metadataBase: new URL(baseUrl),
     title: {
-      default: "Parque Bicentenario — Quito, Ecuador",
+      default: title,
       template: "%s | Parque Bicentenario",
     },
-    description:
-      "A travel guide to Parque Bicentenario in Quito, Ecuador. Explore the largest urban ecological park built on the former site of Mariscal Sucre International Airport.",
+    description,
     keywords: [
       "Parque Bicentenario",
       "Bicentennial Park Quito",
@@ -55,9 +71,8 @@ export async function generateMetadata(
       locale: locale === 'es' ? 'es_EC' : locale === 'zh' ? 'zh_CN' : 'en_US',
       alternateLocale: ["en_US", "es_EC", "zh_CN"].filter(l => !l.startsWith(locale)),
       url: `${baseUrl}/${locale}`,
-      title: "Parque Bicentenario — Quito, Ecuador",
-      description:
-        "A travel guide to Parque Bicentenario in Quito, Ecuador. Explore the largest urban ecological park built on the former site of Mariscal Sucre International Airport.",
+      title,
+      description,
       siteName: "Parque Bicentenario Travel Guide",
       images: [
         {
@@ -70,9 +85,8 @@ export async function generateMetadata(
     },
     twitter: {
       card: "summary_large_image",
-      title: "Parque Bicentenario — Quito, Ecuador",
-      description:
-        "A travel guide to Parque Bicentenario in Quito, Ecuador.",
+      title,
+      description,
       images: ["/gallery/parque-bicentenario (1).jpg"],
     },
     robots: {
@@ -116,8 +130,8 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
   return (
-    <html lang={locale} className={`${cormorant.variable} ${dmSans.variable}`}>
-      <body>{children}</body>
-    </html>
+    <div lang={locale} className={`${cormorant.variable} ${dmSans.variable}`}>
+      {children}
+    </div>
   );
 }

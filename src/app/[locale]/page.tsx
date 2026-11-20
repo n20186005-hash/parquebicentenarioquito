@@ -1,10 +1,15 @@
 "use client";
 
+import { landmarkLabels, landmarkGuide } from "@/content/quito/guide-data";
+import { landmarkTopics } from "@/content/quito/landmarks";
+
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { LangProvider, useLang } from "@/components/LangProvider";
 import { useTheme } from "next-themes";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { guideLabels, guidePath, guides, visitTopics } from "@/content/visit-guides";
+import { parkHoursSource, parkVisit } from "@/content/park-visit";
 import galleryImagesData from "@/gallery-data.json";
 
 const MAPS_URL = "https://maps.app.goo.gl/6nQEPT1UWiVMPZDH8";
@@ -82,7 +87,7 @@ function ThemeToggle() {
 }
 
 function Nav() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 80);
@@ -96,11 +101,12 @@ function Nav() {
           Parque Bicentenario
         </span>
       </div>
-      <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
+      <div className="nav-controls">
         <div className="nav-links">
           <a href="#about">{t.nav.about}</a>
           <a href="#visiting">{t.nav.visiting}</a>
           <a href="#transportation">{t.nav.transportation}</a>
+          <a href="#visit-guides">{guideLabels[locale].guides}</a>
           <a href="#tips">{t.nav.tips}</a>
           <a href="#gallery">{t.gallery.title}</a>
           <a href="#reviews">{t.nav.reviews}</a>
@@ -201,9 +207,10 @@ function About() {
 }
 
 function Visiting() {
-  const { t } = useLang();
+  const { t, locale } = useLang();
+  const visit = parkVisit[locale];
   const cards = [
-    { title: t.visiting.hours.title, content: t.visiting.hours.content, note: t.visiting.hours.note },
+    { title: t.visiting.hours.title, content: visit.hours, note: t.visiting.hours.note },
     { title: t.visiting.price.title, content: t.visiting.price.content, note: t.visiting.price.note },
     { title: t.visiting.duration.title, content: t.visiting.duration.content, note: t.visiting.duration.note },
   ];
@@ -223,6 +230,16 @@ function Visiting() {
                 <div className="info-card-title">{c.title}</div>
                 <div className="info-card-content">{c.content}</div>
                 <div className="info-card-note">{c.note}</div>
+                {i === 0 && (
+                  <p className="info-card-note">
+                    {visit.arrival}{" "}
+                    <a className="visit-guide-card-link" href={parkHoursSource}>{visit.hoursSource}</a>
+                    {" · "}
+                    <Link className="visit-guide-card-link" href={guidePath(locale, "como-llegar")}>
+                      {guides["como-llegar"][locale].title}
+                    </Link>
+                  </p>
+                )}
               </div>
             ))}
           </div>
@@ -543,6 +560,56 @@ function Location() {
   );
 }
 
+function VisitGuides() {
+  const { locale } = useLang();
+
+  return (
+    <section id="visit-guides" className="section">
+      <h2 className="section-title">{guideLabels[locale].guides}</h2>
+      <div className="section-divider" />
+      <div className="info-grid">
+        {visitTopics.map((topic) => (
+          <article key={topic} className="info-card">
+            <h3 className="info-card-title">
+              <Link className="visit-guide-card-link" href={guidePath(locale, topic)}>
+                {guides[topic][locale].title}
+              </Link>
+            </h3>
+            <p className="info-card-note">{guides[topic][locale].description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function ExploreQuito() {
+  const { locale } = useLang();
+  const labels = landmarkLabels[locale];
+
+  return (
+    <section id="explore-quito" className="section">
+      <h2 className="section-title">{labels.nearby}</h2>
+      <p className="section-subtitle">{labels.nearbyIntro}</p>
+      <div className="section-divider" />
+      <div className="info-grid">
+        {landmarkTopics.map((topic) => {
+          const guide = landmarkGuide(topic, locale);
+
+          return (
+            <article key={topic} className="info-card">
+              <h3 className="info-card-title">
+                <Link className="visit-guide-card-link" href={guidePath(locale, topic)}>{guide.title}</Link>
+              </h3>
+              <p className="info-card-note">{guide.description}</p>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   const { t } = useLang();
   return (
@@ -585,6 +652,8 @@ export default function Home(props: { params: Promise<{ locale: string }> }) {
       <About />
       <Visiting />
       <Transportation />
+      <VisitGuides />
+      <ExploreQuito />
       <Tips />
       <Gallery />
       <Reviews />

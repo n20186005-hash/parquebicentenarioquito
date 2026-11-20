@@ -33,7 +33,7 @@ export const translations = {
           "面积：125 公顷（基多最大城市公园）",
           "前身：旧苏克雷元帅国际机场（1930s-2013）",
           "核心亮点：3公里旧跑道骑行、航空航天博物馆、安第斯湿地观鸟",
-          "开放时间：每日 06:00 – 18:00（全年无休，免费开放）",
+          "开放时间：市府公布的常规时段为 05:00–19:00，活动期间入口可能调整。",
         ],
       },
       timeline: {
@@ -54,7 +54,7 @@ export const translations = {
       title: "游览指南 (Visitor Information)",
       hours: {
         title: "开放时间",
-        content: "每日：06:00 – 18:00\n公园全年无休，节假日正常开放",
+        content: "市府公布的常规时段为 05:00–19:00。",
         note: "部分设施（如游客中心、洗手间）的开放时间可能略有不同，建议出发前通过官方渠道确认。",
       },
       price: {
@@ -247,7 +247,7 @@ export const translations = {
           "Area: 125 hectares (Quito's largest urban park)",
           "Former Use: Old Mariscal Sucre International Airport (1930s-2013)",
           "Highlights: 3km runway cycling, aerospace museum, Andean wetland bird watching",
-          "Opening Hours: Daily 06:00 – 18:00 (Open year-round, free admission)",
+          "Usual hours published by the city: 05:00–19:00. Event days may affect access.",
         ],
       },
       timeline: {
@@ -268,7 +268,7 @@ export const translations = {
       title: "Visitor Information",
       hours: {
         title: "Operating Hours",
-        content: "Daily: 06:00 – 18:00\nThe park is open year-round, including holidays",
+        content: "Usual hours published by the city: 05:00–19:00.",
         note: "The opening hours of some facilities (such as the visitor center and restrooms) may vary slightly. It is recommended to confirm via official channels before departure.",
       },
       price: {
@@ -461,7 +461,7 @@ export const translations = {
           "Área: 125 hectáreas (El parque urbano más grande de Quito)",
           "Uso Anterior: Antiguo Aeropuerto Internacional Mariscal Sucre (1930s-2013)",
           "Puntos Destacados: Pista de 3km para ciclismo, museo aeroespacial, observación de aves",
-          "Horario de Apertura: Diario 06:00 – 18:00 (Abierto todo el año, entrada gratuita)",
+          "Horario habitual publicado por el Municipio: 05:00–19:00. Los accesos pueden cambiar por eventos.",
         ],
       },
       timeline: {
@@ -482,7 +482,7 @@ export const translations = {
       title: "Información para Visitantes",
       hours: {
         title: "Horario de Operación",
-        content: "Diario: 06:00 – 18:00\nEl parque está abierto todo el año, incluidos los feriados",
+        content: "Horario habitual publicado por el Municipio: 05:00–19:00.",
         note: "El horario de apertura de algunas instalaciones (como el centro de visitantes y los baños) puede variar ligeramente. Se recomienda confirmar a través de canales oficiales antes de la partida.",
       },
       price: {

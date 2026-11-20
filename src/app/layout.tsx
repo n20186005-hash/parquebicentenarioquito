@@ -1,3 +1,4 @@
+import { siteUrl } from "@/content/site-url";
 import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import "./globals.css";
@@ -15,7 +16,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Parque Bicentenario — Quito, Ecuador",
   description: "A travel guide to Parque Bicentenario in Quito, Ecuador. Explore the largest urban ecological park built on the former site of Mariscal Sucre International Airport.",
-  metadataBase: new URL(`https://${process.env.CURRENT_SITE_DOMAIN || 'parquebicentenarioquito.com'}`),
+  metadataBase: siteUrl,
   alternates: {
     canonical: "/en",
     languages: {

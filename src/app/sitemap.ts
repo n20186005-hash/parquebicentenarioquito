@@ -1,49 +1,19 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from "next";
+import { guidePath, locales, topics, type Topic } from "@/content/visit-guides";
+import { siteUrl } from "@/content/site-url";
 
-export const dynamic = 'force-static';
+export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = `https://${process.env.CURRENT_SITE_DOMAIN || 'parquebicentenarioquito.com'}`;
+  function entries(topic?: Topic): MetadataRoute.Sitemap {
+    const urlFor = (locale: (typeof locales)[number]) =>
+      new URL(topic ? guidePath(locale, topic) : `/${locale}`, siteUrl).href;
+    const languages = Object.fromEntries(locales.map((locale) => [locale, urlFor(locale)]));
+    return locales.map((locale) => ({
+      url: urlFor(locale),
+      alternates: { languages: { ...languages, "x-default": urlFor("en") } },
+    }));
+  }
 
-  return [
-    {
-      url: `${baseUrl}/en`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-      alternates: {
-        languages: {
-          es: `${baseUrl}/es`,
-          zh: `${baseUrl}/zh`,
-          en: `${baseUrl}/en`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/es`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-      alternates: {
-        languages: {
-          es: `${baseUrl}/es`,
-          zh: `${baseUrl}/zh`,
-          en: `${baseUrl}/en`,
-        },
-      },
-    },
-    {
-      url: `${baseUrl}/zh`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-      alternates: {
-        languages: {
-          es: `${baseUrl}/es`,
-          zh: `${baseUrl}/zh`,
-          en: `${baseUrl}/en`,
-        },
-      },
-    },
-  ];
+  return [...entries(), ...topics.flatMap((topic) => entries(topic))];
 }

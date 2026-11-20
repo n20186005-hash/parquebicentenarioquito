@@ -1,0 +1,250 @@
+{
+  "plaza-grande": {
+    "src": "/nearby/plaza-grande.webp",
+    "width": 439,
+    "height": 780,
+    "author": "David C. S.",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaza_Grande%2C_Quito.jpg",
+    "license": "4.0"
+  },
+  "san-francisco": {
+    "src": "/nearby/san-francisco.webp",
+    "width": 960,
+    "height": 640,
+    "author": "Paulakindsvater",
+    "source": "https://commons.wikimedia.org/wiki/File:Iglesia_de_san_francisco_en_quito.jpg",
+    "license": "4.0"
+  },
+  "basilica": {
+    "src": "/nearby/basilica.webp",
+    "width": 585,
+    "height": 780,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:%28La_Bas%C3%ADlica_del_Voto_Nacional%2C_Quito%29_pic._u.JPG",
+    "license": "4.0"
+  },
+  "compania": {
+    "src": "/nearby/compania.webp",
+    "width": 519,
+    "height": 780,
+    "author": "Ymblanter",
+    "source": "https://commons.wikimedia.org/wiki/File:Quito_Iglesia_de_La_Compa%C3%B1%C3%ADa_main_facade.jpg",
+    "license": "4.0"
+  },
+  "catedral": {
+    "src": "/nearby/catedral.webp",
+    "width": 960,
+    "height": 720,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:%28Catedral_Metropolitana%2C_Quito%29_exterior_%28pic.bb8%29.jpg",
+    "license": "4.0"
+  },
+  "la-ronda": {
+    "src": "/nearby/la-ronda.webp",
+    "width": 960,
+    "height": 665,
+    "author": "Diego Delso (delso.photo)",
+    "source": "https://commons.wikimedia.org/wiki/File:Calle_de_la_Ronda%2C_Quito%2C_Ecuador%2C_2015-07-22%2C_DD_215.JPG",
+    "license": "4.0"
+  },
+  "itchimbia": {
+    "src": "/nearby/itchimbia.webp",
+    "width": 960,
+    "height": 636,
+    "author": "Héctor López",
+    "source": "https://commons.wikimedia.org/wiki/File:Centro_Cultural_Itchimb%C3%ADa_%28Palacio_de_Cristal%29.jpg",
+    "license": "2.0"
+  },
+  "alameda": {
+    "src": "/nearby/alameda.webp",
+    "width": 585,
+    "height": 780,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:Parque_La_Alameda%2C_El_Centro_Hist%C3%B3rico_de_Quito.jpg",
+    "license": "4.0"
+  },
+  "ejido": {
+    "src": "/nearby/ejido.webp",
+    "width": 960,
+    "height": 720,
+    "author": "Quitolabicicleta",
+    "source": "https://commons.wikimedia.org/wiki/File:Parque_El_Ejido_Quito_Ecuador.JPG",
+    "license": "3.0"
+  },
+  "museo-ciudad": {
+    "src": "/nearby/museo-ciudad.webp",
+    "width": 585,
+    "height": 780,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:Museo_de_la_Ciudad%2C_Quito_%28interior%29_pic_w.JPG",
+    "license": "4.0"
+  },
+  "yaku": {
+    "src": "/nearby/yaku.webp",
+    "width": 960,
+    "height": 640,
+    "author": "Yaku Parque Museo del Agua",
+    "source": "https://commons.wikimedia.org/wiki/File:Fuentes_Museo_del_Agua.jpg",
+    "license": "4.0"
+  },
+  "panecillo": {
+    "src": "/nearby/panecillo.webp",
+    "width": 520,
+    "height": 780,
+    "author": "MartínGonzález 2396",
+    "source": "https://commons.wikimedia.org/wiki/File:El_Panecillo.JPG",
+    "license": "4.0"
+  },
+  "siete-cruces": {
+    "src": "/nearby/siete-cruces.webp",
+    "width": 960,
+    "height": 720,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:Calle_de_las_siete_cruces_pic_1_Calle_Garc%C3%ADa_Moreno%2C_Quito.JPG",
+    "license": "4.0"
+  },
+  "santo-domingo": {
+    "src": "/nearby/santo-domingo.webp",
+    "width": 960,
+    "height": 544,
+    "author": "Diego Delso (delso.photo)",
+    "source": "https://commons.wikimedia.org/wiki/File:Iglesia_de_Santo_Domingo%2C_Quito%2C_Ecuador%2C_2015-07-22%2C_DD_193.JPG",
+    "license": "4.0"
+  },
+  "la-merced": {
+    "src": "/nearby/la-merced.webp",
+    "width": 960,
+    "height": 720,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:%28Quito%29_Exterior_of_the_Iglesia_de_la_Merced_Centro_Historico_de_Quito.JPG",
+    "license": "4.0"
+  },
+  "plaza-teatro": {
+    "src": "/nearby/plaza-teatro.webp",
+    "width": 587,
+    "height": 780,
+    "author": "Martín Vasco",
+    "source": "https://commons.wikimedia.org/wiki/File:Fachada_del_Teatro_Nacional_Sucre_de_noche.jpg",
+    "license": "4.0"
+  },
+  "san-blas": {
+    "src": "/nearby/san-blas.webp",
+    "width": 960,
+    "height": 720,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaza_de_San_Blas%2C_Quito_Historic_Center.jpg",
+    "license": "4.0"
+  },
+  "belmonte": {
+    "src": "/nearby/belmonte.webp",
+    "width": 940,
+    "height": 780,
+    "author": "Ranoutofusername",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaza_Belmonte%2C_Quito.jpg",
+    "license": "4.0"
+  },
+  "san-marcos": {
+    "src": "/nearby/san-marcos.webp",
+    "width": 585,
+    "height": 780,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:%28Iglesia_de_San_Marcos%2C_Quito%29_pic_a1.jpg",
+    "license": "4.0"
+  },
+  "alabado": {
+    "src": "/nearby/alabado.webp",
+    "width": 960,
+    "height": 720,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:%28Museo_Casa_del_Alabado%29_pic._i.jpg",
+    "license": "4.0"
+  },
+  "urrutia": {
+    "src": "/nearby/urrutia.webp",
+    "width": 960,
+    "height": 720,
+    "author": "Ranoutofusername",
+    "source": "https://commons.wikimedia.org/wiki/File:Casa_de_Mar%C3%ADa_Augusta_Urrutia_%28interior%29_001.jpg",
+    "license": "4.0"
+  },
+  "mena-caamano": {
+    "src": "/nearby/mena-caamano.webp",
+    "width": 960,
+    "height": 720,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:%28Museo_Alberto_Mena_Caama%C3%B1o%29_Quito%2C_Pic_q.JPG",
+    "license": "4.0"
+  },
+  "arte-contemporaneo": {
+    "src": "/nearby/arte-contemporaneo.webp",
+    "width": 960,
+    "height": 720,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:Antiguo_Hospital_Militar%2C_Quito_pic_001.JPG",
+    "license": "4.0"
+  },
+  "observatorio": {
+    "src": "/nearby/observatorio.webp",
+    "width": 960,
+    "height": 720,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:Quito_Astronomical_Observatory_pic.a2a.jpg",
+    "license": "4.0"
+  },
+  "san-diego": {
+    "src": "/nearby/san-diego.webp",
+    "width": 960,
+    "height": 640,
+    "author": "Natalia Cartolini",
+    "source": "https://commons.wikimedia.org/wiki/File:Cementerio_San_Diego_de_Quito.JPG",
+    "license": "4.0"
+  },
+  "guapulo": {
+    "src": "/nearby/guapulo.webp",
+    "width": 585,
+    "height": 780,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:%28Iglesia_de_Gu%C3%A1pulo%29_pic_a.JPG",
+    "license": "4.0"
+  },
+  "capilla-hombre": {
+    "src": "/nearby/capilla-hombre.webp",
+    "width": 960,
+    "height": 640,
+    "author": "Bernard Gagnon",
+    "source": "https://commons.wikimedia.org/wiki/File:La_Capilla_del_Hombre%2C_Quito.jpg",
+    "license": "3.0"
+  },
+  "muna": {
+    "src": "/nearby/muna.webp",
+    "width": 960,
+    "height": 742,
+    "author": "Ranoutofusername",
+    "source": "https://commons.wikimedia.org/wiki/File:Museo_Nacional_del_Ecuador_%28MUNA%29%2C_ingreso.jpg",
+    "license": "CC0"
+  },
+  "guanguiltagua": {
+    "src": "/nearby/guanguiltagua.webp",
+    "width": 960,
+    "height": 540,
+    "author": "Ika Sami",
+    "source": "https://commons.wikimedia.org/wiki/File:Cerro_de_La_Libertad_y_Ung%C3%BCi_desde_Parque_Metropolitano_Guang%C3%BCiltagua.jpg",
+    "license": "3.0"
+  },
+  "teleferiqo": {
+    "src": "/nearby/teleferiqo.webp",
+    "width": 960,
+    "height": 640,
+    "author": "Eman Jaradat",
+    "source": "https://commons.wikimedia.org/wiki/File:Telef%C3%A9riQo.jpg",
+    "license": "4.0"
+  },
+  "arbolito": {
+    "src": "/nearby/arbolito.webp",
+    "width": 960,
+    "height": 190,
+    "author": "Andrés Defaz Freire",
+    "source": "https://commons.wikimedia.org/wiki/File:Parque_el_Arbolito.jpg",
+    "license": "3.0"
+  }
+}
