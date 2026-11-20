@@ -1158,3 +1158,12 @@ body {
 .guide-facts dt {
   font-weight: 600;
 }
+
+#explore-quito {
+  scroll-margin-top: 6rem;
+}
+
+.visit-guide .landmark-photo {
+  object-fit: contain;
+  background: var(--color-earth-soft);
+}

@@ -1,11 +1,14 @@
 "use client";
 
+import { landmarkLabels, landmarkGuide } from "@/content/quito/guide-data";
+import { landmarkTopics } from "@/content/quito/landmarks";
+
 import React, { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { LangProvider, useLang } from "@/components/LangProvider";
 import { useTheme } from "next-themes";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
-import { guideLabels, guidePath, guides, topics } from "@/content/visit-guides";
+import { guideLabels, guidePath, guides, visitTopics } from "@/content/visit-guides";
 import { parkHoursSource, parkVisit } from "@/content/park-visit";
 import galleryImagesData from "@/gallery-data.json";
 
@@ -565,7 +568,7 @@ function VisitGuides() {
       <h2 className="section-title">{guideLabels[locale].guides}</h2>
       <div className="section-divider" />
       <div className="info-grid">
-        {topics.map((topic) => (
+        {visitTopics.map((topic) => (
           <article key={topic} className="info-card">
             <h3 className="info-card-title">
               <Link className="visit-guide-card-link" href={guidePath(locale, topic)}>
@@ -575,6 +578,33 @@ function VisitGuides() {
             <p className="info-card-note">{guides[topic][locale].description}</p>
           </article>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function ExploreQuito() {
+  const { locale } = useLang();
+  const labels = landmarkLabels[locale];
+
+  return (
+    <section id="explore-quito" className="section">
+      <h2 className="section-title">{labels.nearby}</h2>
+      <p className="section-subtitle">{labels.nearbyIntro}</p>
+      <div className="section-divider" />
+      <div className="info-grid">
+        {landmarkTopics.map((topic) => {
+          const guide = landmarkGuide(topic, locale);
+
+          return (
+            <article key={topic} className="info-card">
+              <h3 className="info-card-title">
+                <Link className="visit-guide-card-link" href={guidePath(locale, topic)}>{guide.title}</Link>
+              </h3>
+              <p className="info-card-note">{guide.description}</p>
+            </article>
+          );
+        })}
       </div>
     </section>
   );
@@ -623,6 +653,7 @@ export default function Home(props: { params: Promise<{ locale: string }> }) {
       <Visiting />
       <Transportation />
       <VisitGuides />
+      <ExploreQuito />
       <Tips />
       <Gallery />
       <Reviews />

@@ -1,10 +1,13 @@
+import landmarkPhotos from "@/content/quito/photos.json";
+import { landmarkLabels, landmarkGuide } from "@/content/quito/guide-data";
+import { landmarkTopics } from "@/content/quito/landmarks";
 import { factLabels, nearbyPhotos, reviewChecked, reviewSnapshots, reviewText, visitFacts } from "@/content/nearby-guides";
 import { agendaChecked, arenaSessions, cityAgenda, parkHoursSource, parkRouteMaps, parkVisit, quitoFestSource } from "@/content/park-visit";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { guideLabels, guideMaps, guidePath, guides, locales, topics } from "@/content/visit-guides";
+import { getGuide, getGuideMap, guideLabels, guidePath, isVisitTopic, locales, topics, visitTopics } from "@/content/visit-guides";
 
 export const revalidate = 3600;
 
@@ -14,7 +17,7 @@ function resolveGuide(params: Awaited<Props["params"]>) {
   const locale = locales.find((value) => value === params.locale);
   const topic = topics.find((value) => value === params.topic);
   if (!locale || !topic) notFound();
-  return { locale, topic, guide: guides[topic][locale] };
+  return { locale, topic, guide: getGuide(topic, locale) };
 }
 
 export function generateStaticParams() {
@@ -24,6 +27,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, topic, guide } = resolveGuide(await params);
   const url = guidePath(locale, topic);
+  const photos = isVisitTopic(topic) ? undefined : [{ url: landmarkPhotos[topic].src, alt: guide.title }];
 
   return {
     title: { absolute: guide.title },
@@ -32,8 +36,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: url,
       languages: { en: guidePath("en", topic), es: guidePath("es", topic), zh: guidePath("zh", topic), "x-default": guidePath("en", topic) },
     },
-    openGraph: { title: guide.title, description: guide.description, url },
-    twitter: { card: "summary_large_image", title: guide.title, description: guide.description },
+    openGraph: { title: guide.title, description: guide.description, url, images: photos },
+    twitter: { card: "summary_large_image", title: guide.title, description: guide.description, images: photos },
   };
 }
 
@@ -41,11 +45,25 @@ export default async function GuidePage({ params }: Props) {
   const { locale, topic, guide } = resolveGuide(await params);
   const labels = guideLabels[locale];
   const visit = parkVisit[locale];
-  const facts = visitFacts[topic][locale];
+  const landmark = isVisitTopic(topic) ? null : landmarkGuide(topic, locale);
+  const facts = landmark ? {
+    manager: landmark.about,
+    address: landmark.address,
+    hours: landmark.hours,
+    fee: landmark.access,
+    transit: landmark.transport,
+  } : visitFacts[topic][locale];
+  const cityLabels = landmarkLabels[locale];
+  const map = getGuideMap(topic);
   const factText = factLabels[locale];
   const review = reviewSnapshots[topic];
   const reviewCopy = reviewText[locale];
-  const photo = topic === "parque-la-carolina" || topic === "jardin-botanico-quito" ? nearbyPhotos[topic] : null;
+  const landmarkPhoto = isVisitTopic(topic) ? null : landmarkPhotos[topic];
+  const photo = landmarkPhoto ?? (topic === "parque-la-carolina" || topic === "jardin-botanico-quito" ? nearbyPhotos[topic] : null);
+  const license = landmarkPhoto?.license ?? "4.0";
+  const related = landmark
+    ? landmarkTopics.filter((candidate) => candidate !== topic && landmarkGuide(candidate, locale).station === landmark.station).slice(0, 3)
+    : visitTopics.filter((candidate) => candidate !== topic);
   const dateFormat = new Intl.DateTimeFormat(locale, {
     dateStyle: "long",
     timeStyle: "short",
@@ -73,17 +91,18 @@ export default async function GuidePage({ params }: Props) {
         </div>
         <h1>{guide.title}</h1>
         <p>{guide.description}</p>
-        <a className="maps-link" href={guideMaps[topic]}>{labels.map}</a>
-        <Image className="visit-guide-image" src={photo?.src || "/gallery/parque-bicentenario (1).jpg"} alt={photo ? guide.title : labels.home} width={photo?.width || 960} height={photo?.height || 540} sizes="(max-width: 960px) 100vw, 850px" />
+        <a className="maps-link" href={map}>{labels.map}</a>
+        <Image className={landmarkPhoto ? "visit-guide-image landmark-photo" : "visit-guide-image"} src={photo?.src || "/gallery/parque-bicentenario (1).jpg"} alt={photo ? guide.title : labels.home} width={photo?.width || 960} height={photo?.height || 540} sizes="(max-width: 960px) 100vw, 850px" />
         {photo && (
           <p className="info-card-note">
             {factText.photo} · <a href={photo.source}>{photo.author} / Wikimedia Commons</a>
-            {" · "}<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+            {" · "}<a href={`https://creativecommons.org/licenses/by-sa/${license}/`}>CC BY-SA {license}</a>
+            {landmarkPhoto && ` · ${cityLabels.resized}`}
           </p>
         )}
       </header>
       <section>
-        <h2>{factText.manager}</h2>
+        <h2>{landmark ? cityLabels.about : factText.manager}</h2>
         <p>{facts.manager}</p>
       </section>
       <section>
@@ -131,6 +150,15 @@ export default async function GuidePage({ params }: Props) {
           {section.steps && <ol>{section.steps.map((step) => <li key={step}>{step}</li>)}</ol>}
         </section>
       ))}
+      {landmark && (
+        <section>
+          <h2>{cityLabels.questions}</h2>
+          <details>
+            <summary>{landmark.faq[0]}</summary>
+            <p>{landmark.faq[1]}</p>
+          </details>
+        </section>
+      )}
       <section>
         <h2>{factText.reviews}</h2>
         {review && (
@@ -142,15 +170,18 @@ export default async function GuidePage({ params }: Props) {
             {" · "}{reviewCopy.checked} <time dateTime={reviewChecked}>{reviewChecked}</time>
           </p>
         )}
-        <p><a href={guideMaps[topic]}>{factText.reviewLink}</a></p>
+        <p><a href={map}>{factText.reviewLink}</a></p>
       </section>
       <section>
         <h2>{labels.related}</h2>
-        <ul>
-          {topics.filter((other) => other !== topic).map((other) => (
-            <li key={other}><Link href={guidePath(locale, other)}>{guides[other][locale].title}</Link></li>
-          ))}
-        </ul>
+        {related.length > 0 && (
+          <ul>
+            {related.map((other) => (
+              <li key={other}><Link href={guidePath(locale, other)}>{getGuide(other, locale).title}</Link></li>
+            ))}
+          </ul>
+        )}
+        <p><Link href={`/${locale}#explore-quito`}>{cityLabels.nearby}</Link></p>
       </section>
       <section>
         <h2>{labels.sources}</h2>

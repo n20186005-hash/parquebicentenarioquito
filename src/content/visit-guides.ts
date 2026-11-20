@@ -1,8 +1,11 @@
+import { landmarkMap, landmarkGuide } from "./quito/guide-data";
+import { landmarkTopics } from "./quito/landmarks";
 import { nearbyGuides, nearbyTopics } from "./nearby-guides";
 import type { Locale } from "@/i18n/translations";
 
 export const locales = ["en", "es", "zh"] as const;
-export const topics = ["arena-bicentenario", "como-llegar", ...nearbyTopics] as const;
+export const visitTopics = ["arena-bicentenario", "como-llegar", ...nearbyTopics] as const;
+export const topics = [...visitTopics, ...landmarkTopics] as const;
 export type Topic = (typeof topics)[number];
 
 export function guidePath(locale: Locale, topic: Topic) {
@@ -28,14 +31,14 @@ type Guide = {
   sources: { name: string; url: string }[];
 };
 
-export const guideMaps: Record<Topic, string> = {
+export const guideMaps: Record<(typeof visitTopics)[number], string> = {
   "arena-bicentenario": "https://www.google.com/maps/search/?api=1&query=Arena+Bicentenario%2C+Quito%2C+Ecuador",
   "como-llegar": parkMap,
   "parque-la-carolina": "https://www.google.com/maps/search/?api=1&query=Parque+La+Carolina%2C+Quito",
   "jardin-botanico-quito": "https://www.google.com/maps/search/?api=1&query=Jard%C3%ADn+Bot%C3%A1nico+de+Quito%2C+Rumipamba+E6-264",
 };
 
-export const guides: Record<Topic, Record<Locale, Guide>> = {
+export const guides: Record<(typeof visitTopics)[number], Record<Locale, Guide>> = {
   ...nearbyGuides,
   "arena-bicentenario": {
     es: {
@@ -102,3 +105,16 @@ export const guides: Record<Topic, Record<Locale, Guide>> = {
     },
   },
 };
+
+
+export function isVisitTopic(topic: Topic): topic is (typeof visitTopics)[number] {
+  return visitTopics.some((candidate) => candidate === topic);
+}
+
+export function getGuide(topic: Topic, locale: Locale) {
+  return isVisitTopic(topic) ? guides[topic][locale] : landmarkGuide(topic, locale);
+}
+
+export function getGuideMap(topic: Topic) {
+  return isVisitTopic(topic) ? guideMaps[topic] : landmarkMap(topic);
+}

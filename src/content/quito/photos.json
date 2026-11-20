@@ -1,0 +1,90 @@
+{
+  "plaza-grande": {
+    "src": "/nearby/plaza-grande.webp",
+    "width": 439,
+    "height": 780,
+    "author": "David C. S.",
+    "source": "https://commons.wikimedia.org/wiki/File:Plaza_Grande%2C_Quito.jpg",
+    "license": "4.0"
+  },
+  "san-francisco": {
+    "src": "/nearby/san-francisco.webp",
+    "width": 960,
+    "height": 640,
+    "author": "Paulakindsvater",
+    "source": "https://commons.wikimedia.org/wiki/File:Iglesia_de_san_francisco_en_quito.jpg",
+    "license": "4.0"
+  },
+  "basilica": {
+    "src": "/nearby/basilica.webp",
+    "width": 585,
+    "height": 780,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:%28La_Bas%C3%ADlica_del_Voto_Nacional%2C_Quito%29_pic._u.JPG",
+    "license": "4.0"
+  },
+  "compania": {
+    "src": "/nearby/compania.webp",
+    "width": 519,
+    "height": 780,
+    "author": "Ymblanter",
+    "source": "https://commons.wikimedia.org/wiki/File:Quito_Iglesia_de_La_Compa%C3%B1%C3%ADa_main_facade.jpg",
+    "license": "4.0"
+  },
+  "catedral": {
+    "src": "/nearby/catedral.webp",
+    "width": 960,
+    "height": 720,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:%28Catedral_Metropolitana%2C_Quito%29_exterior_%28pic.bb8%29.jpg",
+    "license": "4.0"
+  },
+  "la-ronda": {
+    "src": "/nearby/la-ronda.webp",
+    "width": 960,
+    "height": 665,
+    "author": "Diego Delso (delso.photo)",
+    "source": "https://commons.wikimedia.org/wiki/File:Calle_de_la_Ronda%2C_Quito%2C_Ecuador%2C_2015-07-22%2C_DD_215.JPG",
+    "license": "4.0"
+  },
+  "itchimbia": {
+    "src": "/nearby/itchimbia.webp",
+    "width": 960,
+    "height": 636,
+    "author": "Héctor López",
+    "source": "https://commons.wikimedia.org/wiki/File:Centro_Cultural_Itchimb%C3%ADa_%28Palacio_de_Cristal%29.jpg",
+    "license": "2.0"
+  },
+  "alameda": {
+    "src": "/nearby/alameda.webp",
+    "width": 585,
+    "height": 780,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:Parque_La_Alameda%2C_El_Centro_Hist%C3%B3rico_de_Quito.jpg",
+    "license": "4.0"
+  },
+  "ejido": {
+    "src": "/nearby/ejido.webp",
+    "width": 960,
+    "height": 720,
+    "author": "Quitolabicicleta",
+    "source": "https://commons.wikimedia.org/wiki/File:Parque_El_Ejido_Quito_Ecuador.JPG",
+    "license": "3.0"
+  },
+  "museo-ciudad": {
+    "src": "/nearby/museo-ciudad.webp",
+    "width": 585,
+    "height": 780,
+    "author": "David Adam Kess",
+    "source": "https://commons.wikimedia.org/wiki/File:Museo_de_la_Ciudad%2C_Quito_%28interior%29_pic_w.JPG",
+    "license": "4.0"
+  },
+  "yaku": {
+    "src": "/nearby/yaku.webp",
+    "width": 960,
+    "height": 640,
+    "author": "Yaku Parque Museo del Agua",
+    "source": "https://commons.wikimedia.org/wiki/File:Fuentes_Museo_del_Agua.jpg",
+    "license": "4.0"
+  }
+}
