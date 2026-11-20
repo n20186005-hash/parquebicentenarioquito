@@ -96,7 +96,7 @@ export default async function GuidePage({ params }: Props) {
         {photo && (
           <p className="info-card-note">
             {factText.photo} · <a href={photo.source}>{photo.author} / Wikimedia Commons</a>
-            {" · "}<a href={`https://creativecommons.org/licenses/by-sa/${license}/`}>CC BY-SA {license}</a>
+            {" · "}<a href={license === "CC0" ? "https://creativecommons.org/publicdomain/zero/1.0/" : `https://creativecommons.org/licenses/by-sa/${license}/`}>{license === "CC0" ? "CC0 1.0" : `CC BY-SA ${license}`}</a>
             {landmarkPhoto && ` · ${cityLabels.resized}`}
           </p>
         )}

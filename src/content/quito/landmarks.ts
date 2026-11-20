@@ -1,3 +1,5 @@
+import { moreLandmarks } from "./more-landmarks";
+
 type Localized = {
   title: string;
   intro: string;
@@ -9,7 +11,7 @@ type Localized = {
   faq: [string, string];
 };
 
-type Landmark = {
+export type Landmark = {
   address: string;
   station: string;
   source: string;
@@ -171,6 +173,7 @@ export const landmarks = {
     en: { title: "Yaku Water Museum", intro: "Explore the role of water in Quito’s everyday life at a museum in the El Placer neighbourhood.", about: "Yaku is part of the Fundación Museos de la Ciudad. Its El Placer spaces interpret the relationships between water, ecosystems and urban life.", architecture: "Notice how the buildings, outdoor fountains and exhibition areas fit along the sloping site.", route: ["Arrive at your chosen El Placer entrance.", "Check which exhibitions and activities are running.", "Finish in the outdoor fountain area if it is open."], transport: "San Francisco is the Metro reference point. Consider a taxi for the uphill leg to El Placer. The museum lists two different entrances.", photo: "If the outdoor area is open, frame the fountains with the museum building.", faq: ["Can I drive to the pedestrian entrance?", "The museum lists El Placer Oe11-271 for pedestrians and Bolívar and Rocafuerte for pedestrians and vehicles."] },
     zh: { title: "Yaku 水博物館", intro: "走進 El Placer 街區的水博物館，了解水與基多的城市生活如何相連。", about: "Yaku 隸屬基多城市博物館基金會。El Placer 的展覽空間用於介紹水、生態與都市生活的關係。", architecture: "觀察山坡上館舍、戶外噴泉與展覽空間如何依地形相間排列。", route: ["依交通方式選擇 El Placer 的入口。", "進館先看當日展廳和活動時段。", "若戶外區開放，可在噴泉區結束行程。"], transport: "可從 San Francisco 地鐵站接駁。前往 El Placer 有上坡，可以搭車；出發前先核對館方的兩處入口。", photo: "戶外區開放時，可將噴泉和後方館舍一起入鏡。", faq: ["可以從行人入口開車進去嗎？", "館方列明 El Placer Oe11-271 供行人使用，Bolívar 與 Rocafuerte 入口可供行人及車輛使用。"] },
   },
+  ...moreLandmarks,
 } satisfies Record<string, Landmark>;
 
 export type LandmarkSlug = keyof typeof landmarks;
